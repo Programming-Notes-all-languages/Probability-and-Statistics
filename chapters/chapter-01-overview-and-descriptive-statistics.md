@@ -16,7 +16,10 @@ Visual summaries give preliminary impressions; formal analysis needs numerical s
 
 **Reporting convention.** Report $\bar{x}$ with one more decimal place than the observations. If stopping distances are $x_1 = 125$ ft and $x_2 = 131$ ft, report $\bar{x} = 127.3$ ft — not 128 or 127.
 
-**Worked example (Example 1.14) — crack lengths.** Caustic stress corrosion cracking of iron and steel is studied because of failures around rivets in steel boilers and steam rotors. Constant-load stress-corrosion tests on smooth bar tensile specimens give crack lengths $x$ (mm), $n = 21$, listed here in increasing order:
+<details>
+<summary><strong>Example 1.14 — crack lengths</strong></summary>
+
+Caustic stress corrosion cracking of iron and steel is studied because of failures around rivets in steel boilers and steam rotors. Constant-load stress-corrosion tests on smooth bar tensile specimens give crack lengths $x$ (mm), $n = 21$, listed here in increasing order:
 
 8.9, 9.6, 10.3, 11.8, 12.7, 14.0, 14.6, 16.1, 18.5, 20.4, 21.2, 23.3, 24.2, 24.9, 25.3, 25.8, 27.1, 28.5, 30.2, 32.4, 45.0
 
@@ -25,6 +28,7 @@ $\sum x_i = 444.8$, so
 $$\bar{x} = \frac{444.8}{21} = 21.18,$$
 
 a value consistent with the stem-and-leaf display of the data (Figure 1.14), where a crack length in the low 20s appears "typical."
+</details>
 
 **Physical interpretation: balance point.** Draw and scale a horizontal measurement axis, and represent each observation by a 1-lb weight placed at its value on the axis. The only point at which a fulcrum balances the system of weights is $\bar{x}$ (Figure 1.15) — the mean is literally the center of mass of the sample.
 
@@ -46,7 +50,10 @@ Sample incomes often produce such outliers (a few astronomical salaries), making
 > - if $n$ is odd: $\tilde{x} = $ the single middle value — the $(n+1)/2$-th ordered value;
 > - if $n$ is even: $\tilde{x} = $ the average of the two middle values — the $n/2$-th and $(n/2 + 1)$-st ordered values.
 
-**Worked example (Example 1.15) — Beethoven's Ninth.** Durations (min) of a sample of 12 recordings of Symphony No. 9, in increasing order:
+<details>
+<summary><strong>Example 1.15 — Beethoven's Ninth</strong></summary>
+
+Durations (min) of a sample of 12 recordings of Symphony No. 9, in increasing order:
 
 62.3, 62.8, 63.6, 65.2, 65.7, 66.4, 67.4, 68.4, 68.8, 70.8, 75.7, 79.0
 
@@ -59,6 +66,7 @@ If the largest observation (79.0) had not been included, $n = 11$ and the median
 $$\bar{x} = \frac{816.1}{12} = 68.01,$$
 
 a bit more than a full minute larger than the median — pulled out relative to it because the data stretches out somewhat more on the upper end than the lower.
+</details>
 
 **Insensitivity to outliers; population median and skewness.** The median is very insensitive to outliers: increasing the two largest durations from 75.7, 79.0 to 85.7, 89.0 leaves $\tilde{x}$ unaffected. In handling outlying values, $\bar{x}$ and $\tilde{x}$ sit at opposite ends of a spectrum — both describe where the data is centered, but they focus on different aspects of the sample and are not generally equal.
 
@@ -92,7 +100,10 @@ Unless $n$ is a multiple of 100, care must be exercised in obtaining percentiles
 
 The mean and median are opposite extremes of one family: the mean averages **all** the data (trims 0% from each end), while the median trims as much as possible, keeping only the middle one or two values. A trimmed mean is a compromise between them — a moderate trimming percentage, somewhere between 5% and 25%, yields a center neither as sensitive to outliers as the mean nor as insensitive as the median. If $na$ is not an integer, interpolate: for example with $n = 26$, $\bar{x}_{tr}(10)$ would be a weighted average of the 7.7% trimmed mean (trim two from each end) and the 11.5% trimmed mean (trim three from each end).
 
-**Worked example (Example 1.16) — Bidri copper content.** Bidri wares are cast in India from an alloy of primarily zinc with some copper. Copper content (%) for a sample of 26 artifacts, in increasing order:
+<details>
+<summary><strong>Example 1.16 — Bidri copper content</strong></summary>
+
+Bidri wares are cast in India from an alloy of primarily zinc with some copper. Copper content (%) for a sample of 26 artifacts, in increasing order:
 
 2.0, 2.4, 2.5, 2.6, 2.6, 2.7, 2.7, 2.8, 3.0, 3.1, 3.2, 3.3, 3.3, 3.4, 3.4, 3.6, 3.6, 3.6, 3.6, 3.7, 4.4, 4.6, 4.7, 4.8, 5.3, 10.1
 
@@ -105,6 +116,7 @@ A trimming percentage of $100(2/26) = 7.7\%$ eliminates the two smallest (2.0, 2
 $$\bar{x}_{tr}(7.7) = \frac{95.0 - 2.0 - 2.4 - 5.3 - 10.1}{22} = \frac{75.2}{22} = 3.42.$$
 
 Trimming here eliminates the larger outlier and pulls the trimmed mean toward the median — landing between $\bar{x}$ and $\tilde{x}$, as designed.
+</details>
 
 ### Categorical Data and Sample Proportions
 
@@ -153,7 +165,10 @@ so the average deviation is always zero. One could instead average the absolute 
 
 Note that $s^2$ and $s$ are both nonnegative, and the unit for $s$ is the same as the unit for each $x_i$ (if observations are fuel efficiencies in mpg, then perhaps $s = 2.0$ mpg). A rough interpretation: **$s$ is the size of a typical or representative deviation from the sample mean** — if $s = 2.0$ mpg, some $x_i$'s are closer than 2.0 to $\bar{x}$ and others farther away; 2.0 is a "standard" deviation from the mean. If a second sample has $s = 3.0$, its typical deviation is roughly 1.5 times as large — an indication of more variability.
 
-**Worked example (Example 1.17) — Ford Focus fuel efficiency.** User-reported fuel efficiencies (mpg) for a sample of $n = 11$ 2009 Ford Focus automatics (EPA rating: 27 city / 33 highway):
+<details>
+<summary><strong>Example 1.17 — Ford Focus fuel efficiency</strong></summary>
+
+User-reported fuel efficiencies (mpg) for a sample of $n = 11$ 2009 Ford Focus automatics (EPA rating: 27 city / 33 highway):
 
 | Car | $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
 |---|---|---|---|
@@ -174,6 +189,7 @@ $\sum x_i = 365.9$, so $\bar{x} = 33.26$. (The deviations sum to .04 rather than
 $$s^2 = \frac{314.106}{11 - 1} = 31.41, \qquad s = 5.60.$$
 
 The size of a representative deviation from the sample mean 33.26 is roughly 5.6 mpg. (All 11 reported values exceed the EPA figure — perhaps only drivers with really good fuel efficiencies communicate their results.)
+</details>
 
 **Why divide by $n-1$ and not $n$?** There is also a measure of variability for the population, the **population variance**: when the population is finite and consists of $N$ values,
 
@@ -191,7 +207,10 @@ involving $\sum x_i$ (summing then squaring) and $\sum x_i^2$ (squaring then sum
 
 $$\sum (x_i - \bar{x})^2 = \sum (x_i^2 - 2\bar{x}\,x_i + \bar{x}^2) = \sum x_i^2 - 2\bar{x}\sum x_i + n\bar{x}^2 = \sum x_i^2 - n\bar{x}^2 = \sum x_i^2 - \frac{(\sum x_i)^2}{n}.$$
 
-**Worked example (Example 1.18) — post-surgical knee range of motion.** Traumatic knee dislocation often requires surgery to repair ruptured ligaments; one recovery measure is range of motion (the angle formed when the leg, starting straight, is bent as far as possible). Thirteen observations from "Reconstruction of the Anterior and Posterior Cruciate Ligaments After Knee Dislocation" (*Amer. J. Sports Med.*, 1999: 189–197):
+<details>
+<summary><strong>Example 1.18 — post-surgical knee range of motion</strong></summary>
+
+Traumatic knee dislocation often requires surgery to repair ruptured ligaments; one recovery measure is range of motion (the angle formed when the leg, starting straight, is bent as far as possible). Thirteen observations from "Reconstruction of the Anterior and Posterior Cruciate Ligaments After Knee Dislocation" (*Amer. J. Sports Med.*, 1999: 189–197):
 
 154, 142, 137, 133, 122, 126, 135, 135, 108, 120, 127, 134, 122
 
@@ -202,6 +221,7 @@ $$S_{xx} = \sum x_i^2 - \frac{(\sum x_i)^2}{n} = 222{,}581 - \frac{(1695)^2}{13}
 from which $s^2 = 1579.0769/12 = 131.59$ and $s = 11.47$.
 
 Both the defining formula and the computational formula can be sensitive to rounding, so as much decimal accuracy as possible should be used in intermediate calculations.
+</details>
 
 ### Properties of $s^2$ Under Shifts and Scaling
 
@@ -222,13 +242,17 @@ Roughly speaking, $f_s$ is unaffected by the positions of observations in the sm
 
 The simplest boxplot is based on the **five-number summary**: smallest $x_i$, lower fourth, median, upper fourth, largest $x_i$. Construction: draw a horizontal measurement scale; place a rectangle above it with left edge at the lower fourth and right edge at the upper fourth (so box width = $f_s$); mark the median inside the rectangle — its position relative to the two edges conveys skewness in the middle 50% of the data; finally draw "whiskers" out from either end of the box to the smallest and largest observations. A vertical orientation is drawn by obvious modifications.
 
-**Worked example (Example 1.19) — corrosion pit depths.** Ultrasound measurements of the largest pit depth (milli-in.) in the floor plate of an aboveground crude-oil storage tank (*Materials Eval.*, 1994: 846–849), $n = 19$:
+<details>
+<summary><strong>Example 1.19 — corrosion pit depths</strong></summary>
+
+Ultrasound measurements of the largest pit depth (milli-in.) in the floor plate of an aboveground crude-oil storage tank (*Materials Eval.*, 1994: 846–849), $n = 19$:
 
 40, 52, 55, 60, 70, 75, 85, 85, 90, 90, 92, 94, 94, 95, 98, 100, 115, 125, 125
 
 The five-number summary: smallest $x_i = 40$, lower fourth $= 72.5$, $\tilde{x} = 90$, upper fourth $= 96.5$ (so $f_s = 24$), largest $x_i = 125$. In the resulting boxplot (Figure 1.20) the right edge of the box is much closer to the median than the left edge — a very substantial skew in the middle half of the data — and the box width ($f_s$) is reasonably large relative to the range between the whisker tips.
 
 Minitab's description of the same data reports N = 19, Mean = 86.32, Median = 90.00, TrMean = 86.76, StDev = 23.32, **SE Mean = 5.35**, Minimum = 40.00, Maximum = 125.00, Q1 = 70.00, Q3 = 98.00. Two notes: SE Mean is $s/\sqrt{n}$ — an important quantity for inferences about $\mu$ in later chapters; and the software quartiles (Q1, Q3) are similar to the fourths but calculated in a slightly different manner, so they need not match exactly.
+</details>
 
 **Boxplots that show outliers.** Many inferential procedures assume the population distribution is normal (a bell curve). Even a single extreme outlier warns that such procedures may be unreliable; several mild outliers convey the same message.
 
@@ -236,7 +260,10 @@ Minitab's description of the same data reports N = 19, Mean = 86.32, Median = 90
 
 The construction is modified: whiskers extend out from each end of the box to the smallest and largest observations that are **not** outliers; each mild outlier is drawn as a closed circle and each extreme outlier as an open circle (some software packages do not distinguish between the two).
 
-**Worked example (Example 1.20) — Chesapeake Bay nitrogen loads.** Total nitrogen (TN) loads (kg N/day) from a particular Chesapeake Bay location (*J. of Environ. Engr.*, 2008: 610–618), $n = 57$, in increasing order:
+<details>
+<summary><strong>Example 1.20 — Chesapeake Bay nitrogen loads</strong></summary>
+
+Total nitrogen (TN) loads (kg N/day) from a particular Chesapeake Bay location (*J. of Environ. Engr.*, 2008: 610–618), $n = 57$, in increasing order:
 
 9.69, 13.16, 17.09, 18.12, 23.70, 24.07, 24.29, 26.43, 30.75, 31.54, 35.07, 36.99, 40.32, 42.51, 45.64, 48.22, 49.98, 50.06, 55.02, 57.00, 58.41, 61.31, 64.25, 65.24, 66.14, 67.68, 81.40, 90.80, 92.17, 92.42, 100.82, 101.94, 103.61, 106.28, 106.80, 108.69, 114.61, 120.86, 124.54, 143.27, 143.75, 149.64, 167.79, 182.50, 192.55, 193.53, 271.57, 292.61, 312.45, 352.09, 371.47, 444.68, 460.86, 563.92, 690.11, 826.54, 1529.35
 
@@ -245,10 +272,14 @@ Relevant summary quantities: $\tilde{x} = 92.17$, lower fourth $= 45.64$, upper 
 $$\text{upper fourth} + 1.5\,f_s = 351.015 \qquad \text{upper fourth} + 3\,f_s = 534.24,$$
 
 so the four largest observations — 563.92, 690.11, 826.54, and 1529.35 — are **extreme outliers**, while 352.09, 371.47, 444.68, and 460.86 are **mild outliers**. The whiskers extend to the smallest observation (9.69) on the low end and to 312.45 — the largest observation that is not an outlier — on the upper end. There is some positive skewness in the middle half of the data (the median line sits closer to the left edge of the box than the right) and a great deal of positive skewness overall.
+</details>
 
 **Comparative boxplots.** A comparative or side-by-side boxplot is a very effective way of revealing similarities and differences between two or more data sets consisting of observations on the same variable — fuel efficiency for four types of automobiles, crop yields for three varieties, and so on.
 
-**Worked example (Example 1.21) — indoor radon and childhood cancer.** Some evidence suggests high indoor radon concentration may be linked to childhood cancers (*The Lancet*, 1991: 1537–1538). Radon concentrations (Bq/m³) were measured in two samples of houses: one where a child diagnosed with cancer had resided, and one with no recorded cases. The data appear as a back-to-back stem-and-leaf display (Figure 1.23; HI: 210), with numerical summaries:
+<details>
+<summary><strong>Example 1.21 — indoor radon and childhood cancer</strong></summary>
+
+Some evidence suggests high indoor radon concentration may be linked to childhood cancers (*The Lancet*, 1991: 1537–1538). Radon concentrations (Bq/m³) were measured in two samples of houses: one where a child diagnosed with cancer had resided, and one with no recorded cases. The data appear as a back-to-back stem-and-leaf display (Figure 1.23; HI: 210), with numerical summaries:
 
 | | $\bar{x}$ | $\tilde{x}$ | $s$ | $f_s$ |
 |---|---|---|---|---|
@@ -256,6 +287,7 @@ so the four largest observations — 563.92, 690.11, 826.54, and 1529.35 — are
 | No cancer | 19.2 | 12.0 | 17.0 | 18.0 |
 
 Both the mean and median suggest the cancer sample is centered somewhat to the right of the no-cancer sample on the measurement scale — but the **mean exaggerates** this shift, largely because of the observation 210 in the cancer sample. The values of $s$ suggest more variability in the cancer sample, yet this impression is **contradicted by the fourth spreads** ($f_s = 11$ vs. $18$). Again, the extreme outlier 210 is the culprit — a concrete illustration of why resistant measures matter. In the comparative boxplot (Figure 1.24), the no-cancer box is stretched out compared with the cancer box, and the positions of the median lines show much more skewness in the middle half of the no-cancer sample than the cancer sample; outliers are represented by horizontal line segments with no distinction between mild and extreme.
+</details>
 
 ---
 
