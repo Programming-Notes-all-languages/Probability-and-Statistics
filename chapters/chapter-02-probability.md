@@ -1,7 +1,7 @@
 # Chapter 2 — Probability
 
 **Course:** EGN 2440 — Probability & Statistics with Calculus (USF Fall 2026)
-**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62).
+**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62), 2.3 Counting Techniques (pp. 64–72).
 
 ## Section 2.1 — Sample Spaces and Events
 
@@ -117,6 +117,58 @@ $$ P(A) = \frac{N(A)}{N} $$
 
 When outcomes are equally likely, computing probabilities reduces to **counting**: count the favorable outcomes and divide by the total.
 
+## Section 2.3 — Counting Techniques
+
+### Why Counting
+
+When all outcomes of an experiment are equally likely, $P(A) = N(A)/N$ (Eq. 2.1), so computing probabilities reduces to counting favorable and total outcomes. If the sample space is small enough to list, no general rules are needed; for large spaces listing is prohibitive, and counting rules give $N$ and $N(A)$ directly. The rules also apply when outcomes are *not* equally likely, and several of them reappear in Chapter 3's probability distributions.
+
+### The Product Rule for Ordered Pairs
+
+An **ordered pair** $(O_1, O_2)$ is different from $(O_2, O_1)$.
+
+> **Proposition (Product rule).** If the first element of a pair can be selected in $n_1$ ways and, for each such choice, the second element can be selected in $n_2$ ways, then there are $n_1 n_2$ ordered pairs.
+
+Equivalent interpretation: an operation carried out in **two stages** — if stage 1 has $n_1$ possible performances and, for each way of performing stage 1, stage 2 has $n_2$ ways, then the two-stage sequence can be performed in $n_1 n_2$ ways. The rule stays valid even when the *set* of possible second elements depends on which first element was chosen, as long as there are exactly $n_2$ choices for each first choice (e.g., choosing an obstetrician and a pediatrician from the same clinic: 4 obstetricians with 3 pediatricians per clinic gives $(4)(3) = 12$ pairs).
+
+### Tree Diagrams
+
+A **tree diagram** represents all possibilities pictorially: from a starting point, one *first-generation branch* for each possible first element; from the tip of each first branch, one *second-generation branch* for each possible second element. The tips of the $n_1 n_2$ second-generation branches correspond one-to-one with the ordered pairs — this verifies the product rule. Unlike the product rule, a tree diagram does **not** require equal numbers of branches at each level (e.g., clinics with different numbers of pediatricians), so it can represent experiments to which the product rule does not apply.
+
+### The General Product Rule for k-Tuples
+
+An ordered collection of $k$ objects is called a **k-tuple** (a pair = 2-tuple, a triple = 3-tuple).
+
+> **Proposition (Product rule for k-tuples).** If the first element has $n_1$ possible choices; for each choice of the first element, the second has $n_2$ possible choices; …; and for each possible choice of the first $k-1$ elements, the $k$th element has $n_k$ choices, then there are
+> $$ n_1 n_2 \cdots n_k $$
+> k-tuples.
+
+Equivalent interpretation: an operation in **$k$ stages**, where stage $i$ can be performed in $n_i$ ways for each way of performing the earlier stages. Visualized by adding generations to a tree diagram — each possible k-tuple corresponds to the tip of exactly one $k$th-generation branch.
+
+### Permutations and Combinations
+
+From a group of $n$ **distinct** objects ("distinct" means some characteristic differentiates any two), how many subsets of size $k$ can be selected? The answer depends on whether order matters:
+
+> **Definition.** An *ordered* subset is called a **permutation**; the number of permutations of size $k$ that can be formed from $n$ objects is denoted $P_{k,n}$. An *unordered* subset is called a **combination**, and its count is written $\binom{n}{k}$, read "n choose k."
+
+**Permutations.** Choosing chair, vice-chair, and secretary from 7 representatives: the chair has 7 choices, then the vice-chair 6, then the secretary 5 — so $P_{3,7} = (7)(6)(5) = 210$ by the product rule. Using factorial notation ($m! = m(m-1)\cdots(2)(1)$ for a positive integer $m$, with $0! := 1$):
+
+> **Proposition.**
+> $$ P_{k,n} = \frac{n!}{(n-k)!} $$
+
+**Combinations.** Any particular combination of size $k$ can be ordered in exactly $k!$ ways to produce permutations, so the number of combinations is the number of permutations divided by $k!$:
+
+> **Proposition.**
+> $$ \binom{n}{k} = \frac{P_{k,n}}{k!} = \frac{n!}{k!(n-k)!} $$
+
+Boundary values: $\binom{n}{0} = 1$ and $\binom{n}{n} = 1$ (only one way to choose none or all), and $\binom{n}{1} = n$.
+
+### Counting in Two-Group Sampling
+
+When a sample of $k$ items is drawn without replacement from a population of $N = N_1 + N_2$ split into two groups, the number of samples containing exactly $j$ items from group 1 (hence $k-j$ from group 2) is $\binom{N_1}{j}\binom{N_2}{k-j}$ — a product-rule argument over the two independent choices — while the total number of possible samples is $\binom{N}{k}$. Under equally likely sampling,
+$$ P(\text{exactly } j \text{ from group 1}) = \frac{\binom{N_1}{j}\binom{N_2}{k-j}}{\binom{N}{k}} $$
+This is the counting pattern behind the hypergeometric distribution (Chapter 3). For compound events like "at least $j$ from group 1," decompose into disjoint exact-count events and sum their probabilities.
+
 ## Quick Reference
 
 | Symbol / concept | Meaning |
@@ -142,3 +194,10 @@ When outcomes are equally likely, computing probabilities reduces to **counting*
 | Three-event union | $P(A \cup B \cup C) = P(A)+P(B)+P(C) - P(A\cap B) - P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)$ (Figure 2.6) |
 | Systematic assignment | finite/countably infinite $S$: assign simple-event probabilities with $\sum P(E_i) = 1$, then $P(A) = \sum_{E_i \in A} P(E_i)$ |
 | Equally likely outcomes | each of the $N$ outcomes has probability $1/N$, so $P(A) = N(A)/N$ — probability reduces to counting favorable vs. total outcomes |
+| Ordered pair / k-tuple | $(O_1, O_2) \ne (O_2, O_1)$; an ordered collection of $k$ objects is a k-tuple (pair = 2-tuple, triple = 3-tuple) |
+| Product rule (pairs) | first element in $n_1$ ways, second in $n_2$ for each → $n_1 n_2$ pairs; equivalently a two-stage operation with $n_1$, then $n_2$, ways |
+| Tree diagram | one branch per choice at each generation; tips of the last generation ↔ outcomes (verifies product rule); works even when branch counts vary, where the product rule does not |
+| Product rule (k-tuples) | $k$-stage operation with $n_i$ ways at stage $i$ → $n_1 n_2 \cdots n_k$ k-tuples |
+| Permutation $P_{k,n}$ | ordered subset of size $k$ from $n$: $\frac{n!}{(n-k)!}$ — order matters (lineups, officer selections) |
+| Combination $\binom{n}{k}$ | unordered subset: $\frac{n!}{k!(n-k)!} = P_{k,n}/k!$; $\binom{n}{0} = \binom{n}{n} = 1$, $\binom{n}{1} = n$ — order does not matter (samples, committees) |
+| Two-group sampling | exactly $j$ of group 1 in a sample of $k$: $\frac{\binom{N_1}{j}\binom{N_2}{k-j}}{\binom{N}{k}}$ — the hypergeometric counting pattern (Ch. 3) |
