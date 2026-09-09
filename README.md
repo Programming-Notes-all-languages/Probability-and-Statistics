@@ -10,7 +10,7 @@ Textbook: *Probability and Statistics for Engineering and the Sciences* (8th ed.
 | Ch | Topic | Notes |
 |---:|---|---|
 | 1 | Overview & descriptive statistics: data types, pictorial/tabular summaries, measures of location and variability | [Chapter 1](chapters/chapter-01-overview-and-descriptive-statistics.md) (§§1.3–1.4 · Week 1) |
-| 2 | Random variables and distributions: discrete (binomial, Poisson, hypergeometric), continuous (normal, exponential, gamma, beta, uniform); PMFs, PDFs, CDFs | [Chapter 2](chapters/chapter-02-probability.md) (§2.1–2.3) |
+| 2 | Random variables and distributions: discrete (binomial, Poisson, hypergeometric), continuous (normal, exponential, gamma, beta, uniform); PMFs, PDFs, CDFs | [Chapter 2](chapters/chapter-02-probability.md) (§2.1–2.4) |
 | 3 | Properties of expectation and variance: expected value, covariance, correlation, joint distributions | — |
 | 4 | Sampling distributions: sample mean, central limit theorem, chi-square, t, F distributions | — |
 | 5 | Point estimation: method of moments, maximum likelihood, bias, MSE, sufficiency | — |

@@ -1,7 +1,7 @@
 # Chapter 2 — Probability
 
 **Course:** EGN 2440 — Probability & Statistics with Calculus (USF Fall 2026)
-**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62), 2.3 Counting Techniques (pp. 64–72).
+**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62), 2.3 Counting Techniques (pp. 64–72), 2.4 Conditional Probability (pp. 73–80).
 
 ## Section 2.1 — Sample Spaces and Events
 
@@ -169,6 +169,55 @@ When a sample of $k$ items is drawn without replacement from a population of $N 
 $$ P(\text{exactly } j \text{ from group 1}) = \frac{\binom{N_1}{j}\binom{N_2}{k-j}}{\binom{N}{k}} $$
 This is the counting pattern behind the hypergeometric distribution (Chapter 3). For compound events like "at least $j$ from group 1," decompose into disjoint exact-count events and sum their probabilities.
 
+## Section 2.4 — Conditional Probability
+
+### Conditioning on Information
+
+The probability assigned to an event depends on what is known about the experimental situation when the assignment is made, so $P(A)$ is now regarded as the **unconditional** (original) probability of $A$. When partial information becomes available — specifically that another event $B$ has occurred — the probability of $A$ may need revision:
+
+> **Definition (Conditional probability).** For any two events $A$ and $B$ with $P(B) > 0$, the *conditional probability* of $A$ given that $B$ has occurred is
+> $$ P(A \mid B) = \frac{P(A \cap B)}{P(B)} $$
+> where $B$ is called the **conditioning event**.
+
+When outcomes are equally likely, this reduces to counting within a shrunken sample space: after $B$ occurs, only the $N(B)$ outcomes in $B$ remain possible, and $A$ occurs exactly when one of the $N(A \cap B)$ intersection outcomes occurs — so $P(A \mid B) = N(A \cap B)/N(B)$. The Venn diagram (Figure 2.8) shows why: given $B$, the relevant sample space is no longer $S$ but $B$ itself, and the factor $1/P(B)$ normalizes so that this new "sample space" has probability 1 ($P(B \mid B) = 1$).
+
+In general $P(A \mid B) \neq P(B \mid A)$, and both can differ from $P(A)$ — conditioning changes the reference class. (A negative blood test lowers but does not zero out the probability of disease, since tests are not infallible.)
+
+### The Multiplication Rule
+
+Multiplying the definition by $P(B)$ gives its most useful form:
+
+> **Proposition (Multiplication rule).**
+> $$ P(A \cap B) = P(A \mid B)\,P(B) $$
+
+This is important because often it is $P(A \cap B)$ that is desired, while both $P(B)$ and $P(A \mid B)$ are specified directly by the problem. The rule shines when the experiment consists of several stages in succession: if $B$ describes the outcome of stage 1 and $A$ that of stage 2, then $P(A \mid B)$ — conditioning on what occurs first — is often known. It extends to more than two stages; for three events occurring in order,
+
+$$ P(A_1 \cap A_2 \cap A_3) = P(A_3 \mid A_1 \cap A_2)\,P(A_2 \mid A_1)\,P(A_1) $$
+
+### Tree Diagrams and Prior/Posterior Probabilities
+
+For a multi-stage experiment, draw a **tree diagram**: one branch per possible outcome at each stage. The initial branches carry $P(A_i)$; the second-generation branches carry conditional probabilities such as $P(B \mid A_i)$; and next to each tip is written the product of the probabilities along the path — just the multiplication rule in action, giving the joint probability of the full sequence.
+
+The tree also makes explicit the distinction between **prior** and **posterior** probabilities: $P(A_i)$ is the *prior* (before observing the second-stage outcome), while $P(A_i \mid B)$ is the *posterior* — the revised probability after learning that $B$ occurred. The posterior moves in the direction of the evidence: a partition event that makes $B$ more likely gains share, one that makes it less likely loses share (e.g., a product line with a higher repair rate gets its brand share increased when a returned unit needs repair).
+
+### The Law of Total Probability
+
+> **Definition (Mutually exclusive and exhaustive).** Events $A_1, \ldots, A_k$ are *mutually exclusive* if no two have common outcomes, and *exhaustive* if one must occur: $A_1 \cup \cdots \cup A_k = S$. Together they form a **partition** of the sample space.
+
+> **Proposition (Law of total probability).** Let $A_1, \ldots, A_k$ be mutually exclusive and exhaustive events. Then for any other event $B$,
+> $$ P(B) = \sum_{i=1}^{k} P(B \mid A_i)\,P(A_i) $$
+
+Proof idea: if $B$ occurs it must occur in conjunction with exactly one of the $A_i$'s, so $B = (A_1 \cap B) \cup \cdots \cup (A_k \cap B)$ is a union of mutually exclusive pieces (Figure 2.11). Finite additivity plus the multiplication rule gives the result: each path through the partition contributes its joint probability.
+
+### Bayes' Theorem
+
+> **Theorem (Bayes).** Let $A_1, \ldots, A_k$ be a collection of mutually exclusive and exhaustive events with prior probabilities $P(A_i)$. For any event $B$ with $P(B) > 0$, the *posterior probability* of $A_j$ given that $B$ has occurred is
+> $$ P(A_j \mid B) = \frac{P(B \mid A_j)\,P(A_j)}{\sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)}, \qquad j = 1, \ldots, k $$
+
+The numerator is the multiplication rule; the denominator is the law of total probability. Bayes' theorem formalizes the prior → posterior update: evidence $B$ reweights each partition event in proportion to how likely it makes that evidence. When there are only a few partition events, a tree diagram computes posteriors directly (path product divided by the sum of all path products) without ever writing the formula explicitly.
+
+A counterintuitive consequence: when an event is rare, even very accurate evidence can leave its posterior probability low. For a disease affecting 1 in 1000 adults, a test that is positive on 99% of diseased individuals but also on 2% of healthy ones yields $P(\text{disease} \mid \text{positive}) \approx .047$ — the posterior rises by a factor of about 47 over the prior, yet most positive results still come from healthy people. Pushing the posterior much higher requires a test with far smaller error rates.
+
 ## Quick Reference
 
 | Symbol / concept | Meaning |
@@ -201,3 +250,12 @@ This is the counting pattern behind the hypergeometric distribution (Chapter 3).
 | Permutation $P_{k,n}$ | ordered subset of size $k$ from $n$: $\frac{n!}{(n-k)!}$ — order matters (lineups, officer selections) |
 | Combination $\binom{n}{k}$ | unordered subset: $\frac{n!}{k!(n-k)!} = P_{k,n}/k!$; $\binom{n}{0} = \binom{n}{n} = 1$, $\binom{n}{1} = n$ — order does not matter (samples, committees) |
 | Two-group sampling | exactly $j$ of group 1 in a sample of $k$: $\frac{\binom{N_1}{j}\binom{N_2}{k-j}}{\binom{N}{k}}$ — the hypergeometric counting pattern (Ch. 3) |
+| $P(A \mid B)$ | conditional probability of $A$ given that $B$ has occurred ($B$ = conditioning event); equally likely outcomes: $N(A\cap B)/N(B)$ — sample space shrinks to $B$, normalized by $1/P(B)$ (Figure 2.8) |
+| Definition of conditional probability | for $P(B) > 0$: $P(A \mid B) = P(A \cap B)/P(B)$; in general $P(A \mid B) \neq P(B \mid A)$, and both can differ from $P(A)$ |
+| Multiplication rule | $P(A \cap B) = P(A \mid B)\,P(B)$ — use when the intersection is wanted but only conditioning probabilities are given; three stages: $P(A_1\cap A_2\cap A_3) = P(A_3 \mid A_1\cap A_2)\,P(A_2 \mid A_1)\,P(A_1)$ |
+| Tree diagram (probability) | one branch per outcome at each stage; initial branches $P(A_i)$, second generation $P(B \mid A_i)$; product along a path = joint probability of the sequence |
+| Prior vs. posterior | prior = $P(A_i)$ before observing evidence; posterior = $P(A_i \mid B)$ after — moves in the direction of the evidence (partition events that make $B$ more likely gain share) |
+| Mutually exclusive and exhaustive | no two $A_i$'s share an outcome, and one must occur: $A_1 \cup \cdots \cup A_k = S$ — a partition of $S$ |
+| Law of total probability | for a partition $A_1,\ldots,A_k$: $P(B) = \sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)$ — partitions $B$ into disjoint pieces (Figure 2.11) |
+| Bayes' theorem | $P(A_j \mid B) = \frac{P(B \mid A_j)\,P(A_j)}{\sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)}$ — numerator is the multiplication rule, denominator total probability; prior → posterior update |
+| Rare-event phenomenon | with low prevalence, even an accurate test leaves most positives as false alarms: 99% sensitivity, 2% false-positive rate, prevalence 1/1000 → $P(\text{disease} \mid +) \approx .047$ (≈47× the prior) |
