@@ -156,23 +156,48 @@ Equivalent interpretation: an operation in **$k$ stages**, where stage $i$ can b
 
 ### Permutations and Combinations
 
-From a group of $n$ **distinct** objects ("distinct" means some characteristic differentiates any two), how many subsets of size $k$ can be selected? The answer depends on whether order matters:
+From a group of $n$ **distinct** objects, the number of ways to select $k$ objects depends on whether order matters. These formulas assume selection **without replacement**, so $0 \leq k \leq n$.
 
 > **Definition.** An *ordered* subset is called a **permutation**; the number of permutations of size $k$ that can be formed from $n$ objects is denoted $P_{k,n}$. An *unordered* subset is called a **combination**, and its count is written $\binom{n}{k}$, read "n choose k."
 
-**Permutations.** Choosing chair, vice-chair, and secretary from 7 representatives: the chair has 7 choices, then the vice-chair 6, then the secretary 5 — so $P_{3,7} = (7)(6)(5) = 210$ by the product rule. Using factorial notation ($m! = m(m-1)\cdots(2)(1)$ for a positive integer $m$, with $0! := 1$):
+For a positive integer $m$, factorial notation is
+
+$$
+m! = m(m-1)(m-2)\cdots(2)(1),
+$$
+
+with $0! = 1$.
+
+#### Permutations: Order Matters
+
+The first selected position has $n$ choices, the second has $n-1$, and this continues until $k$ positions are filled. By the product rule,
 
 > **Proposition.**
 
-$$ P_{k,n} = \frac{n!}{(n-k)!} $$
+$$
+P_{k,n} = n(n-1)\cdots(n-k+1) = \frac{n!}{(n-k)!}.
+$$
 
-**Combinations.** Any particular combination of size $k$ can be ordered in exactly $k!$ ways to produce permutations, so the number of combinations is the number of permutations divided by $k!$:
+When all $n$ objects are arranged, $k=n$, so the number of complete orderings is $n!$.
+
+#### Combinations: Order Does Not Matter
+
+Each combination of $k$ objects can be arranged in $k!$ different orders. Permutations count all of those orders separately, so dividing by $k!$ removes the duplicate orderings:
 
 > **Proposition.**
 
-$$ \binom{n}{k} = \frac{P_{k,n}}{k!} = \frac{n!}{k!(n-k)!} $$
+$$
+\binom{n}{k} = \frac{P_{k,n}}{k!} = \frac{n!}{k!(n-k)!}.
+$$
 
 Boundary values: $\binom{n}{0} = 1$ and $\binom{n}{n} = 1$ (only one way to choose none or all), and $\binom{n}{1} = n$.
+
+| Selection question | Use | Count |
+|---|---|---|
+| Does changing the order produce a different outcome? | Permutation | $P_{k,n} = \dfrac{n!}{(n-k)!}$ |
+| Does only the selected group matter? | Combination | $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ |
+
+The relationship $P_{k,n} = k!\binom{n}{k}$ expresses the difference directly: every unordered group corresponds to $k!$ ordered arrangements.
 
 ### Counting in Two-Group Sampling
 
