@@ -30,8 +30,8 @@ Chapters 3–4 give a more general definition covering infinite populations. Jus
 ### The Median
 
 > **Definition (Sample median).** Order the $n$ observations from smallest to largest (repeated values included, so every observation appears). Then
-> - if $n$ is odd: $\tilde{x} = $ the single middle value — the $(n+1)/2$-th ordered value;
-> - if $n$ is even: $\tilde{x} = $ the average of the two middle values — the $n/2$-th and $(n/2 + 1)$-st ordered values.
+> - if $n$ is odd: $\tilde{x}$ is the single middle value — the $\frac{n+1}{2}$-th ordered value;
+> - if $n$ is even: $\tilde{x}$ is the average of the two middle values — the $\frac{n}{2}$-th and $(\frac{n}{2} + 1)$-st ordered values.
 
 **Insensitivity to outliers; population median and skewness.** The median is very insensitive to outliers. In handling outlying values, $\bar{x}$ and $\tilde{x}$ sit at opposite ends of a spectrum — both describe where the data is centered, but they focus on different aspects of the sample and are not generally equal.
 
