@@ -10,7 +10,7 @@ Textbook: *Probability and Statistics for Engineering and the Sciences* (8th ed.
 | Ch | Topic | Notes |
 |---:|---|---|
 | 1 | Overview & descriptive statistics: data types, pictorial/tabular summaries, measures of location and variability | [Chapter 1](chapters/chapter-01-overview-and-descriptive-statistics.md) (§§1.3–1.4 · Week 1) |
-| 2 | Random variables and distributions: discrete (binomial, Poisson, hypergeometric), continuous (normal, exponential, gamma, beta, uniform); PMFs, PDFs, CDFs | [Chapter 2](chapters/chapter-02-probability.md) (§2.1–2.4) |
+| 2 | Probability: sample spaces, probability rules, counting, conditional probability, Bayes' theorem, and independence | [Chapter 2](chapters/chapter-02-probability.md) (§§2.1–2.5) |
 | 3 | Properties of expectation and variance: expected value, covariance, correlation, joint distributions | — |
 | 4 | Sampling distributions: sample mean, central limit theorem, chi-square, t, F distributions | — |
 | 5 | Point estimation: method of moments, maximum likelihood, bias, MSE, sufficiency | — |
@@ -26,4 +26,4 @@ Textbook: *Probability and Statistics for Engineering and the Sciences* (8th ed.
 
 - Math is written in LaTeX (`$...$` / `$$...$$`) and renders on GitHub.
 - Notes are organized by **chapter** (not week); each chapter file notes which weeks covered its sections.
-- Each section contains: definitions (quoted blocks), worked examples from the textbook, and a quick reference table at the end of the chapter file.
+- Each section focuses on definitions, formulas, and concise explanations, with a quick reference table at the end of the chapter file.

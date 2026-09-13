@@ -1,7 +1,7 @@
 # Chapter 2 — Probability
 
 **Course:** EGN 2440 — Probability & Statistics with Calculus (USF Fall 2026)
-**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62), 2.3 Counting Techniques (pp. 64–72), 2.4 Conditional Probability (pp. 73–80).
+**Sections:** 2.1 Sample Spaces and Events (pp. 51–54), 2.2 Axioms, Interpretations, and Properties of Probability (pp. 55–62), 2.3 Counting Techniques (pp. 64–72), 2.4 Conditional Probability (pp. 73–80), 2.5 Independence (pp. 83–86).
 
 ## Section 2.1 — Sample Spaces and Events
 
@@ -234,6 +234,59 @@ The numerator is the multiplication rule; the denominator is the law of total pr
 
 A counterintuitive consequence: when an event is rare, even very accurate evidence can leave its posterior probability low. For a disease affecting 1 in 1000 adults, a test that is positive on 99% of diseased individuals but also on 2% of healthy ones yields $P(\text{disease} \mid \text{positive}) \approx .047$ — the posterior rises by a factor of about 47 over the prior, yet most positive results still come from healthy people. Pushing the posterior much higher requires a test with far smaller error rates.
 
+## Section 2.5 — Independence
+
+### Independent Events
+
+Conditional probability measures how knowledge that $B$ occurred changes the probability of $A$. If that knowledge produces no change, the events are independent.
+
+> **Definition (Independence).** For $P(B) > 0$, two events $A$ and $B$ are **independent** if $P(A \mid B) = P(A)$ and are **dependent** otherwise.
+
+Although the definition is written using $P(A \mid B)$, independence is symmetric. When $P(A) > 0$, conditional probability and the multiplication rule give
+
+$$
+P(B \mid A)
+= \frac{P(A \cap B)}{P(A)}
+= \frac{P(A \mid B)P(B)}{P(A)}.
+$$
+
+Thus, when $P(A \mid B) = P(A)$, it follows that $P(B \mid A) = P(B)$. The occurrence or nonoccurrence of either event has no bearing on the probability of the other.
+
+If $A$ and $B$ are independent, then each of the following pairs is also independent:
+
+- $A'$ and $B$
+- $A$ and $B'$
+- $A'$ and $B'$
+
+Mutually exclusive events with positive probabilities cannot be independent. If $A \cap B = \emptyset$ and $P(A) > 0$, $P(B) > 0$, then $P(A \mid B) = 0 \ne P(A)$.
+
+### Multiplication Criterion
+
+> **Proposition.** Events $A$ and $B$ are independent if and only if
+
+$$
+P(A \cap B) = P(A)P(B).
+$$
+
+This follows from the multiplication rule:
+
+$$
+P(A \cap B) = P(A \mid B)P(B) = P(A)P(B).
+$$
+
+The product criterion is often the most convenient way to verify independence or calculate the probability that independent events occur together. Independence may be specified by the experimental situation rather than derived from numerical probabilities.
+
+### Independence of More Than Two Events
+
+> **Definition (Mutual independence).** Events $A_1, \ldots, A_n$ are **mutually independent** if the probability of the intersection of every subset of two or more events equals the product of their individual probabilities. For every $k = 2, 3, \ldots, n$ and every subset of indices $i_1, i_2, \ldots, i_k$,
+
+$$
+P(A_{i_1} \cap A_{i_2} \cap \cdots \cap A_{i_k})
+= P(A_{i_1})P(A_{i_2}) \cdots P(A_{i_k}).
+$$
+
+Mutual independence requires the product rule for **every** subset, not only for the intersection of all $n$ events. When events are mutually independent, any of them may be replaced by its complement while preserving independence, so intersection probabilities involving events and complements can also be found by multiplication.
+
 ## Quick Reference
 
 | Symbol / concept | Meaning |
@@ -275,3 +328,8 @@ A counterintuitive consequence: when an event is rare, even very accurate eviden
 | Law of total probability | for a partition $A_1,\ldots,A_k$: $P(B) = \sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)$ — partitions $B$ into disjoint pieces (Figure 2.11) |
 | Bayes' theorem | $P(A_j \mid B) = \frac{P(B \mid A_j)\,P(A_j)}{\sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)}$ — numerator is the multiplication rule, denominator total probability; prior → posterior update |
 | Rare-event phenomenon | with low prevalence, even an accurate test leaves most positives as false alarms: 99% sensitivity, 2% false-positive rate, prevalence 1/1000 → $P(\text{disease} \mid +) \approx .047$ (≈47× the prior) |
+| Independent events | $P(A \mid B) = P(A)$; equivalently $P(B \mid A) = P(B)$ — learning that one occurred does not change the probability of the other |
+| Product criterion | $A$ and $B$ are independent iff $P(A \cap B) = P(A)P(B)$ |
+| Complements | if $A$ and $B$ are independent, so are $(A',B)$, $(A,B')$, and $(A',B')$ |
+| Mutual exclusivity vs. independence | mutually exclusive events with positive probability cannot be independent |
+| Mutual independence | every intersection of two or more selected events has probability equal to the product of the selected events' probabilities |
