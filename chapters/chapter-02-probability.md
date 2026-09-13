@@ -48,7 +48,8 @@ Given an experiment with sample space $S$, the objective of probability is to as
 > **Axiom 2.** $P(S) = 1$.
 >
 > **Axiom 3.** If $A_1, A_2, A_3, \ldots$ is an infinite collection of disjoint events, then
-> $$ P(A_1 \cup A_2 \cup A_3 \cup \cdots) = \sum_{i=1}^{\infty} P(A_i) $$
+
+$$ P(A_1 \cup A_2 \cup A_3 \cup \cdots) = \sum_{i=1}^{\infty} P(A_i) $$
 
 Axiom 1 formalizes that chances are nonnegative; Axiom 2 assigns the maximum probability to $S$, which by definition must occur; Axiom 3 says the chance that at least one of several disjoint events occurs is the sum of their individual chances. The finite version of Axiom 3 is *derived* from it (append empty sets to a finite disjoint collection), so the axiom list stays minimal — no axiom may be derivable from the others.
 
@@ -63,7 +64,9 @@ Two immediate consequences:
 The axioms do **not** completely determine a probability assignment; they only rule out assignments inconsistent with intuition (e.g., for a thumbtack toss, $P(U) = p$, $P(D) = 1 - p$ is consistent for *any* $p \in [0,1]$). Which value of $p$ is "correct" depends on the experiment and on one's interpretation:
 
 > **Definition (Objective / relative-frequency interpretation).** For an experiment that can be repeated identically and independently, let $n(A)$ be the number of times event $A$ occurs in $n$ replications. The ratio
-> $$ \frac{n(A)}{n} $$
+
+$$ \frac{n(A)}{n} $$
+
 > is the *relative frequency* of occurrence of $A$. As $n$ grows large this fluctuating ratio **stabilizes** to a limiting (long-run) relative frequency, and the objective interpretation identifies that limit with $P(A)$.
 
 So "$P(B) = .1$" for an appliance needing warranty service means roughly 10% will need it *in the long run* — not exactly 1 of every 10 or 10 of every 100, since those are not the long run. The interpretation is "objective" because it rests on a property of the experiment, not on any particular observer (two observers of the same coin-toss sequence must agree). Its limitation: it applies only to **repeatable** experiments.
@@ -78,18 +81,22 @@ All derived from the axioms:
 > (Since $P(A') \geq 0$ and $1 = P(A) + P(A') \geq P(A)$.)
 
 > **Proposition (Complement rule).** For any event $A$,
-> $$ P(A) + P(A') = 1 \qquad\Longleftrightarrow\qquad P(A) = 1 - P(A') $$
+
+$$ P(A) + P(A') = 1 \qquad\Longleftrightarrow\qquad P(A) = 1 - P(A') $$
+
 > because $A$ and $A'$ are disjoint with union $S$.
 
 The complement rule is the workhorse of "at least one" problems: when $P(A)$ is hard to compute directly, compute $P(A')$ instead. A series system of five components fails if *any* component fails (31 outcomes), but works only for the single outcome SSSSS — so $P(\text{fail}) = 1 - P(SSSSS)$.
 
 > **Proposition (Addition rule, disjoint).** If events $A$ and $B$ are mutually exclusive, then
-> $$ P(A \cup B) = P(A) + P(B) $$
+
+$$ P(A \cup B) = P(A) + P(B) $$
 
 For events that are *not* mutually exclusive, adding $P(A)$ and $P(B)$ double-counts the outcomes in $A \cap B$:
 
 > **Proposition (General addition rule).** For any two events $A$ and $B$,
-> $$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $$
+
+$$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $$
 
 Proof idea: decompose $A \cup B$ into the disjoint pieces $A$ and $(B \cap A')$, where $B \cap A'$ is the part of $B$ outside $A$ (Figure 2.4); since $P(B) = P(A \cap B) + P(A' \cap B)$, substituting gives the rule.
 
@@ -140,7 +147,9 @@ A **tree diagram** represents all possibilities pictorially: from a starting poi
 An ordered collection of $k$ objects is called a **k-tuple** (a pair = 2-tuple, a triple = 3-tuple).
 
 > **Proposition (Product rule for k-tuples).** If the first element has $n_1$ possible choices; for each choice of the first element, the second has $n_2$ possible choices; …; and for each possible choice of the first $k-1$ elements, the $k$th element has $n_k$ choices, then there are
-> $$ n_1 n_2 \cdots n_k $$
+
+$$ n_1 n_2 \cdots n_k $$
+
 > k-tuples.
 
 Equivalent interpretation: an operation in **$k$ stages**, where stage $i$ can be performed in $n_i$ ways for each way of performing the earlier stages. Visualized by adding generations to a tree diagram — each possible k-tuple corresponds to the tip of exactly one $k$th-generation branch.
@@ -154,12 +163,14 @@ From a group of $n$ **distinct** objects ("distinct" means some characteristic d
 **Permutations.** Choosing chair, vice-chair, and secretary from 7 representatives: the chair has 7 choices, then the vice-chair 6, then the secretary 5 — so $P_{3,7} = (7)(6)(5) = 210$ by the product rule. Using factorial notation ($m! = m(m-1)\cdots(2)(1)$ for a positive integer $m$, with $0! := 1$):
 
 > **Proposition.**
-> $$ P_{k,n} = \frac{n!}{(n-k)!} $$
+
+$$ P_{k,n} = \frac{n!}{(n-k)!} $$
 
 **Combinations.** Any particular combination of size $k$ can be ordered in exactly $k!$ ways to produce permutations, so the number of combinations is the number of permutations divided by $k!$:
 
 > **Proposition.**
-> $$ \binom{n}{k} = \frac{P_{k,n}}{k!} = \frac{n!}{k!(n-k)!} $$
+
+$$ \binom{n}{k} = \frac{P_{k,n}}{k!} = \frac{n!}{k!(n-k)!} $$
 
 Boundary values: $\binom{n}{0} = 1$ and $\binom{n}{n} = 1$ (only one way to choose none or all), and $\binom{n}{1} = n$.
 
@@ -176,7 +187,9 @@ This is the counting pattern behind the hypergeometric distribution (Chapter 3).
 The probability assigned to an event depends on what is known about the experimental situation when the assignment is made, so $P(A)$ is now regarded as the **unconditional** (original) probability of $A$. When partial information becomes available — specifically that another event $B$ has occurred — the probability of $A$ may need revision:
 
 > **Definition (Conditional probability).** For any two events $A$ and $B$ with $P(B) > 0$, the *conditional probability* of $A$ given that $B$ has occurred is
-> $$ P(A \mid B) = \frac{P(A \cap B)}{P(B)} $$
+
+$$ P(A \mid B) = \frac{P(A \cap B)}{P(B)} $$
+
 > where $B$ is called the **conditioning event**.
 
 When outcomes are equally likely, this reduces to counting within a shrunken sample space: after $B$ occurs, only the $N(B)$ outcomes in $B$ remain possible, and $A$ occurs exactly when one of the $N(A \cap B)$ intersection outcomes occurs — so $P(A \mid B) = N(A \cap B)/N(B)$. The Venn diagram (Figure 2.8) shows why: given $B$, the relevant sample space is no longer $S$ but $B$ itself, and the factor $1/P(B)$ normalizes so that this new "sample space" has probability 1 ($P(B \mid B) = 1$).
@@ -188,7 +201,8 @@ In general $P(A \mid B) \neq P(B \mid A)$, and both can differ from $P(A)$ — c
 Multiplying the definition by $P(B)$ gives its most useful form:
 
 > **Proposition (Multiplication rule).**
-> $$ P(A \cap B) = P(A \mid B)\,P(B) $$
+
+$$ P(A \cap B) = P(A \mid B)\,P(B) $$
 
 This is important because often it is $P(A \cap B)$ that is desired, while both $P(B)$ and $P(A \mid B)$ are specified directly by the problem. The rule shines when the experiment consists of several stages in succession: if $B$ describes the outcome of stage 1 and $A$ that of stage 2, then $P(A \mid B)$ — conditioning on what occurs first — is often known. It extends to more than two stages; for three events occurring in order,
 
@@ -205,14 +219,16 @@ The tree also makes explicit the distinction between **prior** and **posterior**
 > **Definition (Mutually exclusive and exhaustive).** Events $A_1, \ldots, A_k$ are *mutually exclusive* if no two have common outcomes, and *exhaustive* if one must occur: $A_1 \cup \cdots \cup A_k = S$. Together they form a **partition** of the sample space.
 
 > **Proposition (Law of total probability).** Let $A_1, \ldots, A_k$ be mutually exclusive and exhaustive events. Then for any other event $B$,
-> $$ P(B) = \sum_{i=1}^{k} P(B \mid A_i)\,P(A_i) $$
+
+$$ P(B) = \sum_{i=1}^{k} P(B \mid A_i)\,P(A_i) $$
 
 Proof idea: if $B$ occurs it must occur in conjunction with exactly one of the $A_i$'s, so $B = (A_1 \cap B) \cup \cdots \cup (A_k \cap B)$ is a union of mutually exclusive pieces (Figure 2.11). Finite additivity plus the multiplication rule gives the result: each path through the partition contributes its joint probability.
 
 ### Bayes' Theorem
 
 > **Theorem (Bayes).** Let $A_1, \ldots, A_k$ be a collection of mutually exclusive and exhaustive events with prior probabilities $P(A_i)$. For any event $B$ with $P(B) > 0$, the *posterior probability* of $A_j$ given that $B$ has occurred is
-> $$ P(A_j \mid B) = \frac{P(B \mid A_j)\,P(A_j)}{\sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)}, \qquad j = 1, \ldots, k $$
+
+$$ P(A_j \mid B) = \frac{P(B \mid A_j)\,P(A_j)}{\sum_{i=1}^{k} P(B \mid A_i)\,P(A_i)}, \qquad j = 1, \ldots, k $$
 
 The numerator is the multiplication rule; the denominator is the law of total probability. Bayes' theorem formalizes the prior → posterior update: evidence $B$ reweights each partition event in proportion to how likely it makes that evidence. When there are only a few partition events, a tree diagram computes posteriors directly (path product divided by the sum of all path products) without ever writing the formula explicitly.
 

@@ -12,7 +12,8 @@ Visual summaries give preliminary impressions; formal analysis needs numerical s
 ### The Mean
 
 > **Definition (Sample mean).** For observations $x_1, x_2, \ldots, x_n$, the *sample mean* (arithmetic average) is
-> $$\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\sum_{i=1}^{n} x_i}{n}.$$
+
+$$\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\sum_{i=1}^{n} x_i}{n}.$$
 
 **Reporting convention.** Report $\bar{x}$ with one more decimal place than the observations. If stopping distances are $x_1 = 125$ ft and $x_2 = 131$ ft, report $\bar{x} = 127.3$ ft — not 128 or 127.
 
@@ -33,7 +34,8 @@ a value consistent with the stem-and-leaf display of the data (Figure 1.14), whe
 **Physical interpretation: balance point.** Draw and scale a horizontal measurement axis, and represent each observation by a 1-lb weight placed at its value on the axis. The only point at which a fulcrum balances the system of weights is $\bar{x}$ (Figure 1.15) — the mean is literally the center of mass of the sample.
 
 > **Definition (Population mean).** For a finite population with $N$ values,
-> $$\mu = \frac{\text{sum of the } N \text{ population values}}{N}.$$
+
+$$\mu = \frac{\text{sum of the } N \text{ population values}}{N}.$$
 
 Chapters 3–4 give a more general definition covering infinite populations. Just as $\bar{x}$ summarizes a sample, $\mu$ is often the most important characteristic of a population — and inference methods (later chapters) use $\bar{x}$ to draw conclusions about $\mu$. In Example 1.14, $\bar{x} = 21.18$ mm serves as a **point estimate** (a single "best guess") of $\mu$, the true average crack length for all specimens treated that way.
 
@@ -160,7 +162,9 @@ $$\sum_{i=1}^{n} (x_i - \bar{x}) = \sum x_i - n\bar{x} = \sum x_i - n\left(\frac
 so the average deviation is always zero. One could instead average the absolute deviations, $\sum |x_i - \bar{x}|/n$, but the absolute value operation leads to theoretical difficulties; consider instead the **squared deviations** $(x_1 - \bar{x})^2, \ldots, (x_n - \bar{x})^2$.
 
 > **Definition (Sample variance and standard deviation).** The *sample variance*, denoted $s^2$, is
-> $$s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n - 1} = \frac{S_{xx}}{n-1},$$
+
+$$s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n - 1} = \frac{S_{xx}}{n-1},$$
+
 > where $S_{xx} = \sum (x_i - \bar{x})^2$ is the sum of squared deviations. The *sample standard deviation* is the positive square root: $s = \sqrt{s^2}$.
 
 Note that $s^2$ and $s$ are both nonnegative, and the unit for $s$ is the same as the unit for each $x_i$ (if observations are fuel efficiencies in mpg, then perhaps $s = 2.0$ mpg). A rough interpretation: **$s$ is the size of a typical or representative deviation from the sample mean** — if $s = 2.0$ mpg, some $x_i$'s are closer than 2.0 to $\bar{x}$ and others farther away; 2.0 is a "standard" deviation from the mean. If a second sample has $s = 3.0$, its typical deviation is roughly 1.5 times as large — an indication of more variability.
@@ -236,7 +240,8 @@ Result 1: adding (or subtracting) a constant shifts the location of the data set
 Stem-and-leaf displays and histograms convey general impressions; a single summary such as the mean or standard deviation focuses on just one aspect of the data. A **boxplot** describes several prominent features at once: (1) center, (2) spread, (3) the extent and nature of any departure from symmetry, and (4) identification of **"outliers,"** observations that lie unusually far from the main body of the data. Because even a single outlier can drastically affect $\bar{x}$ and $s$, the boxplot is based on measures that are **resistant** to a few outliers — the median and a measure of variability called the fourth spread.
 
 > **Definition (Fourths and fourth spread).** Order the $n$ observations from smallest to largest and separate the smallest half from the largest half; the median $\tilde{x}$ is included in both halves if $n$ is odd. The *lower fourth* is the median of the smallest half, and the *upper fourth* is the median of the largest half. The **fourth spread** is
-> $$f_s = \text{upper fourth} - \text{lower fourth}.$$
+
+$$f_s = \text{upper fourth} - \text{lower fourth}.$$
 
 Roughly speaking, $f_s$ is unaffected by the positions of observations in the smallest 25% or largest 25% of the data — hence resistant to outliers.
 
