@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250" role="img" aria-labelledby="title desc">
+  <title id="title">Mean, median, and distribution shape</title>
+  <desc id="desc">Symmetric, right-skewed, and left-skewed distributions showing how the mean moves toward the long tail.</desc>
+  <style>
+    text{font:600 15px system-ui,sans-serif;fill:#24292f}.small{font-size:13px;font-weight:500}.axis,.curve{fill:none;stroke:#57606a;stroke-width:2}.curve{stroke-width:3}.median{stroke:#1f6feb;stroke-width:3}.mean{stroke:#cf222e;stroke-width:3}.key{font-size:12px}
+    @media(prefers-color-scheme:dark){text{fill:#c9d1d9}.axis,.curve{stroke:#8b949e}.median{stroke:#58a6ff}.mean{stroke:#ff7b72}}
+  </style>
+  <g transform="translate(25,0)">
+    <text x="130" y="24" text-anchor="middle">Symmetric</text><line class="axis" x1="10" y1="190" x2="250" y2="190"/><path class="curve" d="M20 190 C70 188 82 60 130 48 C178 60 190 188 240 190"/><line class="median" x1="130" y1="48" x2="130" y2="205"/><line class="mean" x1="136" y1="48" x2="136" y2="205"/><text class="small" x="133" y="225" text-anchor="middle">mean = median</text>
+  </g>
+  <g transform="translate(320,0)">
+    <text x="130" y="24" text-anchor="middle">Positive skew</text><line class="axis" x1="10" y1="190" x2="250" y2="190"/><path class="curve" d="M18 190 C38 175 48 65 92 52 C126 42 140 112 170 145 C196 174 222 186 245 190"/><line class="median" x1="104" y1="66" x2="104" y2="205"/><line class="mean" x1="146" y1="117" x2="146" y2="205"/><text class="small" x="125" y="225" text-anchor="middle">median &lt; mean</text>
+  </g>
+  <g transform="translate(615,0)">
+    <text x="130" y="24" text-anchor="middle">Negative skew</text><line class="axis" x1="10" y1="190" x2="250" y2="190"/><path class="curve" d="M15 190 C38 186 64 174 90 145 C120 112 134 42 168 52 C212 65 222 175 242 190"/><line class="mean" x1="114" y1="117" x2="114" y2="205"/><line class="median" x1="156" y1="66" x2="156" y2="205"/><text class="small" x="135" y="225" text-anchor="middle">mean &lt; median</text>
+  </g>
+  <line class="median" x1="665" y1="242" x2="695" y2="242"/><text class="key" x="702" y="246">median</text><line class="mean" x1="770" y1="242" x2="800" y2="242"/><text class="key" x="807" y="246">mean</text>
+</svg>

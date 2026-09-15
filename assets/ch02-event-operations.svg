@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="230" viewBox="0 0 900 230" role="img" aria-labelledby="title desc">
+  <title id="title">Union, intersection, and complement of events</title>
+  <desc id="desc">Three Venn diagrams showing the regions represented by union, intersection, and complement.</desc>
+  <style>
+    text{font:600 15px system-ui,sans-serif;fill:#24292f}.label{font-size:14px}.space{fill:#f6f8fa;stroke:#57606a;stroke-width:2}.event{fill:none;stroke:#57606a;stroke-width:2}.shade{fill:#54aeff;fill-opacity:.48}.cut{fill:#f6f8fa}.caption{font-size:16px}
+    @media(prefers-color-scheme:dark){text{fill:#c9d1d9}.space{fill:#161b22;stroke:#8b949e}.event{stroke:#8b949e}.shade{fill:#58a6ff;fill-opacity:.5}.cut{fill:#161b22}}
+  </style>
+  <defs><clipPath id="leftA"><circle cx="95" cy="115" r="62"/></clipPath><clipPath id="midA"><circle cx="395" cy="115" r="62"/></clipPath></defs>
+  <g><rect class="space" x="15" y="35" width="270" height="160" rx="8"/><circle class="shade" cx="95" cy="115" r="62"/><circle class="shade" cx="195" cy="115" r="62"/><circle class="event" cx="95" cy="115" r="62"/><circle class="event" cx="195" cy="115" r="62"/><text class="label" x="70" y="112">A</text><text class="label" x="220" y="112">B</text><text class="caption" x="150" y="22" text-anchor="middle">A ∪ B</text></g>
+  <g><rect class="space" x="315" y="35" width="270" height="160" rx="8"/><circle class="shade" cx="495" cy="115" r="62" clip-path="url(#midA)"/><circle class="event" cx="395" cy="115" r="62"/><circle class="event" cx="495" cy="115" r="62"/><text class="label" x="370" y="112">A</text><text class="label" x="520" y="112">B</text><text class="caption" x="450" y="22" text-anchor="middle">A ∩ B</text></g>
+  <g><rect class="space shade" x="615" y="35" width="270" height="160" rx="8"/><circle class="cut" cx="750" cy="115" r="62"/><circle class="event" cx="750" cy="115" r="62"/><text class="label" x="742" y="120">A</text><text class="caption" x="750" y="22" text-anchor="middle">A′</text></g>
+</svg>
