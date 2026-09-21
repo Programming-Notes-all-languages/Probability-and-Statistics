@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Selecting a discrete probability distribution</title>
+  <desc id="desc">A decision diagram distinguishes binomial, hypergeometric, negative binomial, and Poisson distributions by sampling and stopping conditions.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, Segoe UI, sans-serif; fill: #1f2937; }
+    .title { font-size: 24px; font-weight: 700; }
+    .label { font-size: 16px; font-weight: 650; }
+    .body { font-size: 13px; }
+    .box { fill: #f8fafc; stroke: #64748b; stroke-width: 2; rx: 10; }
+    .answer { fill: #e0f2fe; stroke: #0284c7; stroke-width: 2; rx: 10; }
+    .line { stroke: #64748b; stroke-width: 2; fill: none; }
+    .tag { font-size: 12px; fill: #475569; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #e5e7eb; }
+      .box { fill: #1e293b; stroke: #94a3b8; }
+      .answer { fill: #0c4a6e; stroke: #38bdf8; }
+      .line { stroke: #94a3b8; }
+      .tag { fill: #cbd5e1; }
+    }
+  </style>
+  <text class="title" x="450" y="34" text-anchor="middle">Which Discrete Distribution Fits?</text>
+  <rect class="box" x="300" y="58" width="300" height="56"/>
+  <text class="label" x="450" y="82" text-anchor="middle">What is being counted?</text>
+  <text class="body" x="450" y="102" text-anchor="middle">successes, failures before success, or events</text>
+  <path class="line" d="M450 114V145M135 145H765M135 145V175M450 145V175M765 145V175"/>
+  <text class="tag" x="135" y="165" text-anchor="middle">events in an interval</text>
+  <text class="tag" x="450" y="165" text-anchor="middle">number of successes</text>
+  <text class="tag" x="765" y="165" text-anchor="middle">failures before a target</text>
+  <rect class="answer" x="35" y="176" width="200" height="72"/>
+  <text class="label" x="135" y="204" text-anchor="middle">Poisson</text>
+  <text class="body" x="135" y="225" text-anchor="middle">constant-rate count; mean $\mu$</text>
+  <rect class="box" x="330" y="176" width="240" height="56"/>
+  <text class="label" x="450" y="200" text-anchor="middle">Are draws independent?</text>
+  <text class="body" x="450" y="220" text-anchor="middle">with replacement or effectively so?</text>
+  <rect class="answer" x="665" y="176" width="200" height="72"/>
+  <text class="label" x="765" y="204" text-anchor="middle">Negative binomial</text>
+  <text class="body" x="765" y="225" text-anchor="middle">stop at $r$ successes</text>
+  <path class="line" d="M450 232V270M335 270H565M335 270V300M565 270V300"/>
+  <text class="tag" x="335" y="290" text-anchor="middle">yes</text>
+  <text class="tag" x="565" y="290" text-anchor="middle">no: without replacement</text>
+  <rect class="answer" x="235" y="302" width="200" height="76"/>
+  <text class="label" x="335" y="331" text-anchor="middle">Binomial</text>
+  <text class="body" x="335" y="352" text-anchor="middle">fixed $n$, constant $p$</text>
+  <text class="body" x="335" y="369" text-anchor="middle">count successes</text>
+  <rect class="answer" x="465" y="302" width="200" height="76"/>
+  <text class="label" x="565" y="331" text-anchor="middle">Hypergeometric</text>
+  <text class="body" x="565" y="352" text-anchor="middle">fixed population $N$</text>
+  <text class="body" x="565" y="369" text-anchor="middle">sample $n$ without replacement</text>
+</svg>

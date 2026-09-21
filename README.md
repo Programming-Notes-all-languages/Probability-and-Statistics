@@ -11,7 +11,7 @@ Textbook: *Probability and Statistics for Engineering and the Sciences* (8th ed.
 |---:|---|---|
 | 1 | Overview & descriptive statistics: data types, pictorial/tabular summaries, measures of location and variability | [Chapter 1](chapters/chapter-01-overview-and-descriptive-statistics.md) (§§1.3–1.4 · Week 1) |
 | 2 | Probability: sample spaces, probability rules, permutations and combinations, conditional probability, Bayes' theorem, and independence | [Chapter 2](chapters/chapter-02-probability.md) (§§2.1–2.5) |
-| 3 | Properties of expectation and variance: expected value, covariance, correlation, joint distributions | — |
+| 3 | Discrete random variables, probability mass functions, expected values, binomial, hypergeometric, negative binomial, and Poisson distributions | [Chapter 3](chapters/chapter-03-discrete-random-variables-and-probability-distributions.md) (§§3.1–3.6) |
 | 4 | Sampling distributions: sample mean, central limit theorem, chi-square, t, F distributions | — |
 | 5 | Point estimation: method of moments, maximum likelihood, bias, MSE, sufficiency | — |
 | 6 | Interval estimation: confidence intervals for means, proportions, variances (large and small samples) | — |
