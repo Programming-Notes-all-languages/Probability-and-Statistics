@@ -118,13 +118,19 @@ $$
 
 Adding a constant shifts the distribution without changing variability; multiplying by $a$ multiplies the standard deviation by $|a|$.
 
-### Worked Example — Flash-Drive Memory
+<details>
+<summary>Practice question — Flash-drive memory</summary>
 
-Let $X$ be the GB capacity of a purchased flash drive with pmf:
+A purchased flash drive's memory $X$ (GB) has the pmf below. Compute $E(X)$, $E(X^2)$, $V(X)$ directly from the definition, and the standard deviation of $X$. Then compute $V(X)$ using the shortcut formula.
 
 | $x$ | 1 | 2 | 4 | 8 | 16 |
 |---:|---:|---:|---:|---:|---:|
 | $p(x)$ | 0.05 | 0.10 | 0.35 | 0.40 | 0.10 |
+
+</details>
+
+<details>
+<summary>Worked solution — Flash-drive memory</summary>
 
 The expected capacity is
 
@@ -160,6 +166,8 @@ Then
 $$
 V(X) = E(X^2) - [E(X)]^2 = 57.25 - (6.45)^2 = 15.6475\text{ GB}^2.
 $$
+
+</details>
 
 ## 4. Binomial Distribution
 
