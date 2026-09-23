@@ -118,6 +118,49 @@ $$
 
 Adding a constant shifts the distribution without changing variability; multiplying by $a$ multiplies the standard deviation by $|a|$.
 
+### Worked Example — Flash-Drive Memory
+
+Let $X$ be the GB capacity of a purchased flash drive with pmf:
+
+| $x$ | 1 | 2 | 4 | 8 | 16 |
+|---:|---:|---:|---:|---:|---:|
+| $p(x)$ | 0.05 | 0.10 | 0.35 | 0.40 | 0.10 |
+
+The expected capacity is
+
+$$
+E(X) = 1(0.05) + 2(0.10) + 4(0.35) + 8(0.40) + 16(0.10) = 6.45\text{ GB}.
+$$
+
+Using the definition of variance,
+
+$$
+\begin{aligned}
+V(X) &= (1-6.45)^2(0.05) + (2-6.45)^2(0.10) \\
+&\quad + (4-6.45)^2(0.35) + (8-6.45)^2(0.40) \\
+&\quad + (16-6.45)^2(0.10) \\
+&= 15.6475\text{ GB}^2.
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+\sigma_X = \sqrt{15.6475} \approx 3.956\text{ GB}.
+$$
+
+For the shortcut formula, first compute
+
+$$
+E(X^2) = 1^2(0.05) + 2^2(0.10) + 4^2(0.35) + 8^2(0.40) + 16^2(0.10) = 57.25.
+$$
+
+Then
+
+$$
+V(X) = E(X^2) - [E(X)]^2 = 57.25 - (6.45)^2 = 15.6475\text{ GB}^2.
+$$
+
 ## 4. Binomial Distribution
 
 > **Definition (Binomial experiment).** A binomial experiment has a fixed number $n$ of trials, two outcomes per trial, independent trials, and a constant success probability $p$.
