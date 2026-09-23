@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
   <title id="title">Selecting a discrete probability distribution</title>
-  <desc id="desc">A decision diagram distinguishes binomial, hypergeometric, negative binomial, and Poisson distributions by sampling and stopping conditions.</desc>
+  <desc id="desc">A decision diagram distinguishes binomial, hypergeometric, negative binomial (including geometric), and Poisson distributions by sampling and stopping conditions.</desc>
   <style>
     text { font-family: system-ui, -apple-system, Segoe UI, sans-serif; fill: #1f2937; }
     .title { font-size: 24px; font-weight: 700; }
@@ -28,22 +28,23 @@
   <text class="tag" x="765" y="165" text-anchor="middle">failures before a target</text>
   <rect class="answer" x="35" y="176" width="200" height="72"/>
   <text class="label" x="135" y="204" text-anchor="middle">Poisson</text>
-  <text class="body" x="135" y="225" text-anchor="middle">constant-rate count; mean $\mu$</text>
+  <text class="body" x="135" y="225" text-anchor="middle">constant-rate count; mean μ</text>
   <rect class="box" x="330" y="176" width="240" height="56"/>
   <text class="label" x="450" y="200" text-anchor="middle">Are draws independent?</text>
   <text class="body" x="450" y="220" text-anchor="middle">with replacement or effectively so?</text>
   <rect class="answer" x="665" y="176" width="200" height="72"/>
   <text class="label" x="765" y="204" text-anchor="middle">Negative binomial</text>
-  <text class="body" x="765" y="225" text-anchor="middle">stop at $r$ successes</text>
+  <text class="body" x="765" y="222" text-anchor="middle">stop at r successes</text>
+  <text class="body" x="765" y="237" text-anchor="middle">r=1: geometric</text>
   <path class="line" d="M450 232V270M335 270H565M335 270V300M565 270V300"/>
   <text class="tag" x="335" y="290" text-anchor="middle">yes</text>
   <text class="tag" x="565" y="290" text-anchor="middle">no: without replacement</text>
   <rect class="answer" x="235" y="302" width="200" height="76"/>
   <text class="label" x="335" y="331" text-anchor="middle">Binomial</text>
-  <text class="body" x="335" y="352" text-anchor="middle">fixed $n$, constant $p$</text>
+  <text class="body" x="335" y="352" text-anchor="middle">fixed n, constant p</text>
   <text class="body" x="335" y="369" text-anchor="middle">count successes</text>
   <rect class="answer" x="465" y="302" width="200" height="76"/>
   <text class="label" x="565" y="331" text-anchor="middle">Hypergeometric</text>
-  <text class="body" x="565" y="352" text-anchor="middle">fixed population $N$</text>
-  <text class="body" x="565" y="369" text-anchor="middle">sample $n$ without replacement</text>
+  <text class="body" x="565" y="352" text-anchor="middle">fixed population N</text>
+  <text class="body" x="565" y="369" text-anchor="middle">sample n without replacement</text>
 </svg>

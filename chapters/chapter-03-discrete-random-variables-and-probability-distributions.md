@@ -199,6 +199,31 @@ P(X=x)=(1-p)^x p,
 \qquad x=0,1,2,\ldots
 $$
 
+For this failures convention,
+
+$$
+E(X)=\frac{1-p}{p},
+\qquad
+V(X)=\frac{1-p}{p^2}.
+$$
+
+Alternatively, define the geometric variable $Y$ as the **number of trials** through the first success. Since $Y=X+1$,
+
+$$
+P(Y=y)=(1-p)^{y-1}p,
+\qquad y=1,2,3,\ldots
+$$
+
+and
+
+$$
+E(Y)=\frac{1}{p},
+\qquad
+V(Y)=\frac{1-p}{p^2}.
+$$
+
+Both conventions have the same variance; always identify whether the random variable counts failures or total trials.
+
 ## 6. Poisson Distribution and Process
 
 > **Definition (Poisson distribution).** A discrete random variable $X$ has a Poisson distribution with parameter $\mu>0$ when
@@ -234,7 +259,7 @@ Thus the expected number of events in time $t$ is $\alpha t$, while $\alpha$ is 
 |---|---|
 | Random variable $X$ | function from outcomes to real numbers |
 | Discrete rv | finite or countably infinite possible values |
-| Bernoulli rv | values 0 and 1; success probability $p$ |
+| Bernoulli rv | $P(X=1)=p$, $P(X=0)=1-p$; $E(X)=p$, $V(X)=p(1-p)$ |
 | pmf | $p(x)=P(X=x)$; nonnegative and sums to 1 |
 | cdf | $F(x)=P(X\le x)=\sum_{y\le x}p(y)$ |
 | Expected value | $E(X)=\sum x p(x)$ |
@@ -244,5 +269,7 @@ Thus the expected number of events in time $t$ is $\alpha t$, while $\alpha$ is 
 | Binomial | $\binom{n}{x}p^x(1-p)^{n-x}$; $E(X)=np$, $V(X)=np(1-p)$ |
 | Hypergeometric | sample without replacement; $\dfrac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}$ |
 | Negative binomial | failures before $r$th success; $\binom{x+r-1}{r-1}p^r(1-p)^x$ |
+| Geometric (failures) | $P(X=x)=(1-p)^x p$, $x=0,1,\ldots$; $E(X)=(1-p)/p$, $V(X)=(1-p)/p^2$ |
+| Geometric (trials) | $P(Y=y)=(1-p)^{y-1}p$, $y=1,2,\ldots$; $E(Y)=1/p$, $V(Y)=(1-p)/p^2$ |
 | Poisson | $e^{-\mu}\mu^x/x!$; $E(X)=V(X)=\mu$ |
 | Poisson process | count in time $t$: Poisson with parameter $\alpha t$ |
