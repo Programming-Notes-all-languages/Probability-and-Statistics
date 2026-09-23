@@ -119,7 +119,7 @@ $$
 Adding a constant shifts the distribution without changing variability; multiplying by $a$ multiplies the standard deviation by $|a|$.
 
 <details>
-<summary>Practice question — Flash-drive memory</summary>
+<summary>Example — Flash-drive memory</summary>
 
 A purchased flash drive's memory $X$ (GB) has the pmf below. Compute $E(X)$, $E(X^2)$, $V(X)$ directly from the definition, and the standard deviation of $X$. Then compute $V(X)$ using the shortcut formula.
 
@@ -127,50 +127,26 @@ A purchased flash drive's memory $X$ (GB) has the pmf below. Compute $E(X)$, $E(
 |---:|---:|---:|---:|---:|---:|
 | $p(x)$ | 0.05 | 0.10 | 0.35 | 0.40 | 0.10 |
 
-</details>
-
 <details>
-<summary>Worked solution — Flash-drive memory</summary>
+<summary>Solution</summary>
 
-The expected capacity is
-
-$$
-E(X) = 1(0.05) + 2(0.10) + 4(0.35) + 8(0.40) + 16(0.10) = 6.45\text{ GB}.
-$$
+The expected capacity is $E(X) = 1(0.05) + 2(0.10) + 4(0.35) + 8(0.40) + 16(0.10) = 6.45\text{ GB}$.
 
 Using the definition of variance,
 
-$$
-\begin{aligned}
-V(X) &= (1-6.45)^2(0.05) + (2-6.45)^2(0.10) \\
-&\quad + (4-6.45)^2(0.35) + (8-6.45)^2(0.40) \\
-&\quad + (16-6.45)^2(0.10) \\
-&= 15.6475\text{ GB}^2.
-\end{aligned}
-$$
+$V(X) = (1-6.45)^2(0.05) + (2-6.45)^2(0.10) + (4-6.45)^2(0.35) + (8-6.45)^2(0.40) + (16-6.45)^2(0.10) = 15.6475\text{ GB}^2$.
 
-Therefore,
+Therefore, $\sigma_X = \sqrt{15.6475} \approx 3.956\text{ GB}$.
 
-$$
-\sigma_X = \sqrt{15.6475} \approx 3.956\text{ GB}.
-$$
+For the shortcut formula, $E(X^2) = 1^2(0.05) + 2^2(0.10) + 4^2(0.35) + 8^2(0.40) + 16^2(0.10) = 57.25$.
 
-For the shortcut formula, first compute
+Then $V(X) = E(X^2) - [E(X)]^2 = 57.25 - (6.45)^2 = 15.6475\text{ GB}^2$.
 
-$$
-E(X^2) = 1^2(0.05) + 2^2(0.10) + 4^2(0.35) + 8^2(0.40) + 16^2(0.10) = 57.25.
-$$
-
-Then
-
-$$
-V(X) = E(X^2) - [E(X)]^2 = 57.25 - (6.45)^2 = 15.6475\text{ GB}^2.
-$$
-
+</details>
 </details>
 
 <details>
-<summary>Practice question — Chemical supply orders</summary>
+<summary>Example — Chemical supply orders</summary>
 
 A chemical supply company has 100 lb of a chemical in stock and sells it in 5-lb batches. Let $X$ be the number of batches ordered by a randomly chosen customer, with pmf:
 
@@ -180,43 +156,22 @@ A chemical supply company has 100 lb of a chemical in stock and sells it in 5-lb
 
 Compute $E(X)$ and $V(X)$. Then compute the expected number of pounds left after the order is shipped and the variance of the number of pounds left.
 
-</details>
-
 <details>
-<summary>Worked solution — Chemical supply orders</summary>
+<summary>Solution</summary>
 
 First compute the mean and second moment of the number of batches ordered:
 
-$$
-E(X) = 1(0.2) + 2(0.4) + 3(0.3) + 4(0.1) = 2.3\text{ batches},
-$$
+$E(X) = 1(0.2) + 2(0.4) + 3(0.3) + 4(0.1) = 2.3\text{ batches}$.
 
-$$
-E(X^2) = 1^2(0.2) + 2^2(0.4) + 3^2(0.3) + 4^2(0.1) = 6.1.
-$$
+$E(X^2) = 1^2(0.2) + 2^2(0.4) + 3^2(0.3) + 4^2(0.1) = 6.1$.
 
-Thus,
+Thus, $V(X) = E(X^2) - [E(X)]^2 = 6.1 - (2.3)^2 = 0.81\text{ batches}^2$.
 
-$$
-V(X) = E(X^2) - [E(X)]^2 = 6.1 - (2.3)^2 = 0.81\text{ batches}^2.
-$$
+Let $L$ be the pounds left after shipping. Since each batch is 5 lb, $L = 100 - 5X$.
 
-Let $L$ be the pounds left after shipping. Since each batch is 5 lb,
+Using the linear transformation rules, $E(L) = 100 - 5E(X) = 100 - 5(2.3) = 88.5\text{ lb}$, and $V(L) = (-5)^2V(X) = 25(0.81) = 20.25\text{ lb}^2$.
 
-$$
-L = 100 - 5X.
-$$
-
-Using the linear transformation rules,
-
-$$
-E(L) = 100 - 5E(X) = 100 - 5(2.3) = 88.5\text{ lb},
-$$
-
-$$
-V(L) = (-5)^2V(X) = 25(0.81) = 20.25\text{ lb}^2.
-$$
-
+</details>
 </details>
 
 ## 4. Binomial Distribution
