@@ -169,6 +169,56 @@ $$
 
 </details>
 
+<details>
+<summary>Practice question — Chemical supply orders</summary>
+
+A chemical supply company has 100 lb of a chemical in stock and sells it in 5-lb batches. Let $X$ be the number of batches ordered by a randomly chosen customer, with pmf:
+
+| $x$ | 1 | 2 | 3 | 4 |
+|---:|---:|---:|---:|---:|
+| $p(x)$ | 0.2 | 0.4 | 0.3 | 0.1 |
+
+Compute $E(X)$ and $V(X)$. Then compute the expected number of pounds left after the order is shipped and the variance of the number of pounds left.
+
+</details>
+
+<details>
+<summary>Worked solution — Chemical supply orders</summary>
+
+First compute the mean and second moment of the number of batches ordered:
+
+$$
+E(X) = 1(0.2) + 2(0.4) + 3(0.3) + 4(0.1) = 2.3\text{ batches},
+$$
+
+$$
+E(X^2) = 1^2(0.2) + 2^2(0.4) + 3^2(0.3) + 4^2(0.1) = 6.1.
+$$
+
+Thus,
+
+$$
+V(X) = E(X^2) - [E(X)]^2 = 6.1 - (2.3)^2 = 0.81\text{ batches}^2.
+$$
+
+Let $L$ be the pounds left after shipping. Since each batch is 5 lb,
+
+$$
+L = 100 - 5X.
+$$
+
+Using the linear transformation rules,
+
+$$
+E(L) = 100 - 5E(X) = 100 - 5(2.3) = 88.5\text{ lb},
+$$
+
+$$
+V(L) = (-5)^2V(X) = 25(0.81) = 20.25\text{ lb}^2.
+$$
+
+</details>
+
 ## 4. Binomial Distribution
 
 > **Definition (Binomial experiment).** A binomial experiment has a fixed number $n$ of trials, two outcomes per trial, independent trials, and a constant success probability $p$.
