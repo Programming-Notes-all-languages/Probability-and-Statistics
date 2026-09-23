@@ -33,6 +33,32 @@ $$
 
 where $D$ is the set of possible values of $X$. Probabilities of events are found by adding the relevant masses; for example, $P(a\le X\le b)$ is the sum of $p(x)$ over possible values from $a$ through $b$.
 
+<details>
+<summary>Example — Permit application forms</summary>
+
+A contractor must submit one, two, three, four, or five forms when applying for a building permit, depending on the project. Let $Y$ be the number of forms required for the next applicant. The probability of requiring $y$ forms is proportional to $y$, so $p(y)=ky$ for $y=1,\ldots,5$.
+
+Find:
+
+- the value of $k$;
+- the probability that at most three forms are required;
+- the probability that between two and four forms, inclusive, are required;
+- whether $p(y)=y^2/50$ for $y=1,\ldots,5$ could be a pmf.
+
+<details>
+<summary>Solution</summary>
+
+**a. Find $k$.** A valid pmf sums to 1. Thus $\sum_{y=1}^{5}ky=k(1+2+3+4+5)=15k=1$, so $k=1/15$.
+
+**b. At most three forms.** Add the probabilities for $Y=1,2,3$: $P(Y\le3)=\frac{1}{15}(1+2+3)=\frac{6}{15}=\frac{2}{5}=0.4$.
+
+**c. Between two and four forms, inclusive.** Add the probabilities for $Y=2,3,4$: $P(2\le Y\le4)=\frac{1}{15}(2+3+4)=\frac{9}{15}=\frac{3}{5}=0.6$.
+
+**d. Check $p(y)=y^2/50$.** Its probabilities sum to $\frac{1^2+2^2+3^2+4^2+5^2}{50}=\frac{55}{50}=1.1$, not 1. Therefore, it is **not** a valid pmf.
+
+</details>
+</details>
+
 A **parameter** is a quantity whose value selects one distribution from a family. For a Bernoulli rv with success probability $p$,
 
 $$
