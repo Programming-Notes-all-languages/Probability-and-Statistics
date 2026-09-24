@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-labelledby="title desc">
+  <title id="title">Engine tune-up cylinder count: line graph and probability histogram</title>
+  <desc id="desc">Both plots show four cylinders with probability 0.45, six cylinders with probability 0.40, and eight cylinders with probability 0.15. The line graph connects the three points; the histogram has three separate bars.</desc>
+  <style>
+    .background { fill: #fff; }
+    text { font-family: system-ui, -apple-system, Segoe UI, sans-serif; fill: #1f2937; font-size: 14px; }
+    .heading { font-size: 19px; font-weight: 700; }
+    .axis { fill: none; stroke: #475569; stroke-width: 2; }
+    .grid { stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 4 4; }
+    .line { fill: none; stroke: #0284c7; stroke-width: 3; }
+    .dot, .bar { fill: #0284c7; }
+    .value { font-weight: 700; }
+    .label { fill: #475569; font-size: 12px; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0f172a; }
+      text { fill: #e5e7eb; }
+      .axis { stroke: #cbd5e1; }
+      .grid { stroke: #475569; }
+      .line { stroke: #38bdf8; }
+      .dot, .bar { fill: #38bdf8; }
+      .label { fill: #cbd5e1; }
+    }
+  </style>
+  <rect class="background" width="900" height="340"/>
+  <text class="heading" x="235" y="30" text-anchor="middle">Line graph</text>
+  <text class="heading" x="680" y="30" text-anchor="middle">Probability histogram</text>
+  <path class="grid" d="M70 55H425 M70 95H425 M70 135H425 M70 175H425 M70 215H425 M515 55H870 M515 95H870 M515 135H870 M515 175H870 M515 215H870"/>
+  <path class="axis" d="M70 55V255H425 M515 55V255H870"/>
+  <text class="label" x="40" y="259">0</text><text class="label" x="27" y="219">0.1</text><text class="label" x="27" y="179">0.2</text><text class="label" x="27" y="139">0.3</text><text class="label" x="27" y="99">0.4</text><text class="label" x="27" y="59">0.5</text>
+  <text class="label" x="485" y="259">0</text><text class="label" x="472" y="219">0.1</text><text class="label" x="472" y="179">0.2</text><text class="label" x="472" y="139">0.3</text><text class="label" x="472" y="99">0.4</text><text class="label" x="472" y="59">0.5</text>
+  <path class="line" d="M140 75L250 95L360 195"/>
+  <circle class="dot" cx="140" cy="75" r="5"/><circle class="dot" cx="250" cy="95" r="5"/><circle class="dot" cx="360" cy="195" r="5"/>
+  <text class="value" x="140" y="68" text-anchor="middle">0.45</text><text class="value" x="250" y="88" text-anchor="middle">0.40</text><text class="value" x="360" y="188" text-anchor="middle">0.15</text>
+  <rect class="bar" x="555" y="75" width="60" height="180"/><rect class="bar" x="665" y="95" width="60" height="160"/><rect class="bar" x="775" y="195" width="60" height="60"/>
+  <text class="value" x="585" y="68" text-anchor="middle">0.45</text><text class="value" x="695" y="88" text-anchor="middle">0.40</text><text class="value" x="805" y="188" text-anchor="middle">0.15</text>
+  <text x="140" y="276" text-anchor="middle">4</text><text x="250" y="276" text-anchor="middle">6</text><text x="360" y="276" text-anchor="middle">8</text>
+  <text x="585" y="276" text-anchor="middle">4</text><text x="695" y="276" text-anchor="middle">6</text><text x="805" y="276" text-anchor="middle">8</text>
+  <text class="label" x="250" y="312" text-anchor="middle">Number of cylinders</text><text class="label" x="695" y="312" text-anchor="middle">Number of cylinders</text>
+</svg>

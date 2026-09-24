@@ -59,6 +59,37 @@ Find:
 </details>
 </details>
 
+<details>
+<summary>Exercise 11 — Engine tune-up cylinder counts</summary>
+
+An automobile service facility specializing in engine tune-ups knows that 45% of all tune-ups are done on four-cylinder automobiles, 40% on six-cylinder automobiles, and 15% on eight-cylinder automobiles. Let $X$ be the number of cylinders on the next car to be tuned.
+
+- **a.** What is the pmf of $X$?
+- **b.** Draw both a line graph and a probability histogram for the pmf of part (a).
+- **c.** What is the probability that the next car tuned has at least six cylinders? More than six cylinders?
+
+<details>
+<summary>Solution</summary>
+
+**a. Pmf.** The possible values are 4, 6, and 8. Translate each percentage into a probability:
+
+| $x$ (cylinders) | 4 | 6 | 8 |
+|---:|---:|---:|---:|
+| $p(x)=P(X=x)$ | 0.45 | 0.40 | 0.15 |
+
+The probabilities are nonnegative and add to $0.45+0.40+0.15=1$, so this is a valid pmf; $p(x)=0$ for other values.
+
+**b. Graphs.** Plot $(4,0.45)$, $(6,0.40)$, and $(8,0.15)$ and connect the points for the line graph. For the probability histogram, use separate bars at 4, 6, and 8 with heights 0.45, 0.40, and 0.15.
+
+![Line graph and probability histogram for the engine tune-up cylinder-count pmf](../assets/ch03-engine-tuneup-pmf.svg)
+
+The connecting lines are a visual aid: $X$ takes only the values 4, 6, and 8.
+
+**c. At least six** includes six- and eight-cylinder cars: $P(X\ge 6)=p(6)+p(8)=0.40+0.15=0.55$ (55%). **More than six** includes only eight-cylinder cars: $P(X>6)=p(8)=0.15$ (15%).
+
+</details>
+</details>
+
 A **parameter** is a quantity whose value selects one distribution from a family. For a Bernoulli rv with success probability $p$,
 
 $$
