@@ -90,6 +90,32 @@ The connecting lines are a visual aid: $X$ takes only the values 4, 6, and 8.
 </details>
 </details>
 
+<details>
+<summary>Exercise 17 — Batteries tested until two are acceptable</summary>
+
+A new battery's voltage may be acceptable ($A$) or unacceptable ($U$). A certain flashlight requires two batteries, so batteries will be independently selected and tested until two acceptable ones have been found. Suppose 90% of all batteries have acceptable voltages. Let $Y$ denote the number of batteries that must be tested.
+
+- **a.** What is $p(2)$, that is, $P(Y=2)$?
+- **b.** What is $p(3)$? *Hint: There are two different outcomes that result in $Y=3$.*
+- **c.** To have $Y=5$, what must be true of the fifth battery selected? List the four outcomes for which $Y=5$ and then determine $p(5)$.
+- **d.** Use the pattern in your answers for parts (a)–(c) to obtain a general formula for $p(y)$.
+
+<details>
+<summary>Solution</summary>
+
+The second acceptable battery must occur on the final test. Because tests are independent, multiply the probabilities along each outcome; $P(A)=0.9$ and $P(U)=0.1$.
+
+**a.** The only outcome is $AA$, so $p(2)=(0.9)^2=0.81$.
+
+**b.** The two outcomes are $AUA$ and $UAA$. Each has two $A$'s and one $U$, so $p(3)=2(0.9)^2(0.1)=0.162$.
+
+**c.** The fifth battery must be acceptable. The four outcomes are $AUUUA$, $UAUUA$, $UUAUA$, and $UUUAA$. Each has two $A$'s and three $U$'s, giving $p(5)=4(0.9)^2(0.1)^3=0.00324$.
+
+**d.** For $Y=y$, the final battery is acceptable, and exactly one of the first $y-1$ batteries is acceptable. There are $y-1$ choices for that first $A$; the remaining $y-2$ tests are $U$. Therefore $p(y)=(y-1)(0.9)^2(0.1)^{y-2}$ for integers $y\ge 2$ (and $p(y)=0$ otherwise). This is the negative binomial pattern for two successes, expressed as the total number of tests.
+
+</details>
+</details>
+
 A **parameter** is a quantity whose value selects one distribution from a family. For a Bernoulli rv with success probability $p$,
 
 $$
