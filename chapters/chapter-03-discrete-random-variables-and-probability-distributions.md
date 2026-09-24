@@ -159,6 +159,21 @@ $$
 
 The expected value is the distribution's balance point and long-run average over many repetitions. It need not be a possible observed value. A distribution can have a **heavy tail** when appreciable probability remains far from its center; its expected value may even fail to be finite.
 
+<details>
+<summary>Exercise 34 — Is the expected plant count finite?</summary>
+
+Suppose that the number of plants of a particular type found in a rectangular sampling region (called a quadrat by ecologists) in a certain geographic area is an rv $X$ with pmf $p(x)=c/x^3$ for $x=1,2,3,\ldots$, and $p(x)=0$ otherwise. Is $E(X)$ finite? Justify your answer (this is another distribution that statisticians would call heavy-tailed).
+
+<details>
+<summary>Solution</summary>
+
+First, $c$ is finite and positive: normalization gives $1=c\sum_{x=1}^{\infty}1/x^3$, so $c=1/\sum_{x=1}^{\infty}1/x^3$; the denominator converges because it is a p-series with exponent 3.
+
+By the definition of expected value, $E(X)=\sum_{x=1}^{\infty}x p(x)=c\sum_{x=1}^{\infty}1/x^2$. This series also converges (p-series exponent 2), so **the expectation is finite**. Numerically, $E(X)\approx 1.3684$ plants. A heavy-tailed distribution need not have an infinite mean.
+
+</details>
+</details>
+
 > **Proposition (Expected value of a function).** For any function $h$,
 
 $$
