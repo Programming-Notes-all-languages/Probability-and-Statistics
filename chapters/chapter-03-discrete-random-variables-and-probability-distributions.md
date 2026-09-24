@@ -219,6 +219,26 @@ $$
 B(x;n,p)=P(X\le x)=\sum_{y=0}^{x}b(y;n,p).
 $$
 
+<details>
+<summary>Example — Textbook binding-strength test</summary>
+
+Suppose 20% of copies of a textbook fail a binding-strength test. Let $X$ be the number that fail among 15 randomly selected copies, so $X$ is binomial with $n=15$ and $p=0.2$. Find the probabilities that (1) at most 8 fail, (2) exactly 8 fail, (3) at least 8 fail, and (4) between 4 and 7 fail, inclusive.
+
+<details>
+<summary>Solution</summary>
+
+Write $B(k;15,0.2)=P(X\le k)$ for the binomial cdf. Using the textbook's three-decimal table entries, $B(3;15,0.2)=0.648$, $B(7;15,0.2)=0.996$, and $B(8;15,0.2)=0.999$.
+
+1. **At most 8:** $P(X\le 8)=\sum_{y=0}^{8}b(y;15,0.2)=B(8;15,0.2)\approx 0.999$.
+2. **Exactly 8:** $P(X=8)=P(X\le 8)-P(X\le 7)=B(8;15,0.2)-B(7;15,0.2)\approx 0.999-0.996=0.003$.
+3. **At least 8:** $P(X\ge 8)=1-P(X\le 7)=1-B(7;15,0.2)\approx 1-0.996=0.004$.
+4. **Between 4 and 7, inclusive:** $P(4\le X\le 7)=P(X\le 7)-P(X\le 3)=B(7;15,0.2)-B(3;15,0.2)\approx 0.996-0.648=0.348$.
+
+For the inclusive range, subtract the cdf at 3, not at 4: subtracting $P(X\le 4)$ would exclude the case $X=4$. These results use rounded table entries.
+
+</details>
+</details>
+
 For a binomial rv with parameters $n$ and $p$,
 
 $$
