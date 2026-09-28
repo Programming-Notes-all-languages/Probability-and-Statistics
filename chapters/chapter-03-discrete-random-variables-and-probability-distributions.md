@@ -366,6 +366,32 @@ E(X)=\frac{r(1-p)}{p},
 V(X)=\frac{r(1-p)}{p^2}.
 $$
 
+<details>
+<summary>Exercise 75 — Children until the second girl</summary>
+
+Suppose $P(\text{boy})=0.5$. A couple has children until they have exactly two girls. Assume births are independent.
+
+- **a.** What is the probability that the family has $x$ boys?
+- **b.** What is the probability that the family has four children?
+- **c.** What is the probability that the family has at most four children?
+- **d.** How many boys would you expect the family to have? How many children would you expect in total?
+
+<details>
+<summary>Solution</summary>
+
+Let $X$ count boys before the second girl. This is negative binomial with $r=2$ girls as successes and $p=P(\text{girl})=0.5$. The final birth must be a girl. Among the preceding $x+1$ births, exactly one is a girl; it can occupy any of those $x+1$ positions. There are $x+2$ births in total, each with probability $0.5$ for its specified outcome.
+
+**a. Pmf.** $P(X=x)=\binom{x+1}{1}(0.5)^2(0.5)^x=(x+1)(0.5)^{x+2}$ for $x=0,1,2,\ldots$, and $P(X=x)=0$ otherwise. The combination chooses the position of the **first** girl; the second girl's position is fixed at the end.
+
+**b. Four children.** There must be two boys and two girls, so $X=2$. The valid orders are $BBGG$, $BGBG$, and $GBBG$. Thus $P(X=2)=3(0.5)^4=3/16=0.1875$.
+
+**c. At most four children.** The total number is $T=X+2$, so $T\le4$ means $X\le2$. Therefore $P(T\le4)=P(X=0)+P(X=1)+P(X=2)=1/4+1/4+3/16=11/16=0.6875$.
+
+**d. Expected family size.** The negative binomial mean gives $E(X)=r(1-p)/p=2(0.5)/(0.5)=2$ boys. Because $T=X+2$, $E(T)=E(X)+2=4$ children. These are long-run averages, not guarantees for an individual family.
+
+</details>
+</details>
+
 When $r=1$, the negative binomial is the geometric distribution for failures before the first success:
 
 $$
