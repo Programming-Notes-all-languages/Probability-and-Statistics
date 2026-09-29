@@ -106,6 +106,35 @@ $$
 
 For $Y=aX+b$, $E(Y)=a\mu+b$ and $V(Y)=a^2\sigma^2$. A nonlinear $h(X)$ generally requires integrating $h(x)f(x)$; substituting $E(X)$ into $h$ usually does **not** give $E[h(X)]$.
 
+<details>
+<summary>Exercise 13 — Time headway and its cdf (§4.2)</summary>
+
+In a traffic setting, let $X$ be the time headway (seconds) between consecutive cars. Its pdf is $f(x)=k/x^4$ for $x>1$ and $f(x)=0$ for $x\le1$.
+
+- **a.** Determine $k$ so that $f$ is a valid pdf.
+- **b.** Obtain the cdf of $X$.
+- **c.** Use the cdf to find $P(X>2)$ and $P(2<X<3)$.
+- **d.** Find the mean and standard deviation of headway.
+- **e.** Find the probability that headway is within one standard deviation of the mean.
+
+<details>
+<summary>Solution</summary>
+
+**a. Normalize.** $1=\int_1^\infty kx^{-4}\,dx=k[-1/(3x^3)]_1^\infty=k/3$, so **$k=3$**.
+
+**b. Cdf.** There is no density at or below 1, so $F(x)=0$ for $x\le1$. For $x>1$, $F(x)=\int_1^x3t^{-4}\,dt=[-t^{-3}]_1^x=1-x^{-3}$. Thus $F(x)=0$ if $x\le1$, and $F(x)=1-1/x^3$ if $x>1$.
+
+**c. Tail and interval.** $P(X>2)=1-F(2)=1/8$. Also $P(2<X<3)=F(3)-F(2)=(1-1/27)-(1-1/8)=19/216\approx0.08796$.
+
+**d. Moments.** $E(X)=\int_1^\infty x(3/x^4)\,dx=3[-1/(2x^2)]_1^\infty=3/2$ seconds.
+
+$E(X^2)=\int_1^\infty x^2(3/x^4)\,dx=3[-1/x]_1^\infty=3$, so $V(X)=3-(3/2)^2=3/4$ seconds squared and **$\sigma_X=\sqrt{3}/2\approx0.8660$ seconds**.
+
+**e. Within one SD.** The bounds are $\mu-\sigma_X=(3-\sqrt3)/2\approx0.634$ and $\mu+\sigma_X=(3+\sqrt3)/2\approx2.366$. Because $X>1$, the lower bound lies outside its support. Therefore $P(|X-\mu|\le\sigma_X)=F((3+\sqrt3)/2)=1-1/[(3+\sqrt3)/2]^3\approx0.92450$.
+
+</details>
+</details>
+
 ## 3. The Normal Distribution (§4.3)
 
 > **Definition (Normal distribution).** $X\sim N(\mu,\sigma^2)$ has a symmetric, bell-shaped density with mean and median $\mu$ and standard deviation $\sigma>0$:
