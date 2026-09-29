@@ -23,6 +23,36 @@ Density *height* is not itself a probability; density can exceed 1 when concentr
 
 > **Definition (Uniform distribution).** If $X$ is uniform on $[A,B]$, its density is constant there: $f(x)=1/(B-A)$ for $A\le x\le B$ and zero elsewhere. Any subinterval of length $d$ inside $[A,B]$ has probability $d/(B-A)$.
 
+<details>
+<summary>Exercise 3 — Measurement error density (§4.1)</summary>
+
+The error $X$ in a measurement has pdf $f(x)=0.09375(4-x^2)$ for $-2\le x\le 2$ and $f(x)=0$ otherwise.
+
+- **a.** Sketch the graph of $f(x)$.
+- **b.** Compute $P(X>0)$.
+- **c.** Compute $P(-1<X<1)$.
+- **d.** Compute $P(X<-0.5\text{ or }X>0.5)$.
+
+<details>
+<summary>Solution</summary>
+
+Since $0.09375=3/32$, an antiderivative on $[-2,2]$ is $A(x)=\frac{3}{32}(4x-x^3/3)$.
+
+**a. Graph.** The density is a downward-opening parabola, symmetric about zero. Its peak is $f(0)=3/8$; it reaches zero at $x=-2$ and $x=2$ and stays zero outside that interval.
+
+![Density curve for measurement error, a parabola from -2 to 2](../assets/ch04-measurement-error-density.svg)
+
+**b. Positive error.** Symmetry splits the total area equally: $P(X>0)=\int_0^2 f(x)\,dx=A(2)-A(0)=1/2$.
+
+**c. Error between $-1$ and $1$.** $P(-1<X<1)=\int_{-1}^{1}f(x)\,dx=A(1)-A(-1)=11/32-(-11/32)=11/16=0.6875$.
+
+**d. Error more than $0.5$ from zero.** The two tails are the complement of the middle interval: $P(X<-0.5\text{ or }X>0.5)=1-P(-0.5\le X\le 0.5)$.
+
+The middle area is $A(0.5)-A(-0.5)=47/128$, so the answer is $1-47/128=81/128=0.6328125$. The strict and non-strict inequalities agree because a single point has probability zero.
+
+</details>
+</details>
+
 ## 2. CDFs and Expected Values (§4.2)
 
 > **Definition (Cumulative distribution function).** $F(x)=P(X\le x)$, the area under the pdf to the left of $x$.
