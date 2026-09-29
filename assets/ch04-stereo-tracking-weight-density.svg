@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Stereo cartridge tracking-weight density</title>
+  <desc id="desc">The density is zero outside two to four grams. Between two and four grams it is a symmetric downward-opening parabola with peak height three quarters at the prescribed weight of three grams.</desc>
+  <style>
+    .background { fill: #fff; }
+    text { font-family: system-ui, -apple-system, Segoe UI, sans-serif; fill: #1f2937; font-size: 16px; }
+    .axis { fill: none; stroke: #475569; stroke-width: 2; }
+    .grid { fill: none; stroke: #cbd5e1; stroke-width: 1; stroke-dasharray: 5 5; }
+    .area { fill: #0284c7; opacity: .17; }
+    .curve { fill: none; stroke: #0284c7; stroke-width: 4; }
+    .point { fill: #0284c7; }
+    .label { fill: #475569; font-size: 14px; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0f172a; }
+      text { fill: #e5e7eb; }
+      .axis { stroke: #cbd5e1; }
+      .grid { stroke: #475569; }
+      .area { fill: #38bdf8; }
+      .curve { stroke: #38bdf8; }
+      .point { fill: #38bdf8; }
+      .label { fill: #cbd5e1; }
+    }
+  </style>
+  <rect class="background" width="900" height="360"/>
+  <path class="grid" d="M120 80H780"/>
+  <path class="axis" d="M90 280H810 M450 315V42"/>
+  <path class="area" d="M150 280Q450 -120 750 280Z"/>
+  <path class="curve" d="M90 280H150 Q450 -120 750 280H810"/>
+  <circle class="point" cx="150" cy="280" r="4"/>
+  <circle class="point" cx="450" cy="80" r="5"/>
+  <circle class="point" cx="750" cy="280" r="4"/>
+  <text class="label" x="145" y="310">2</text>
+  <text class="label" x="445" y="310">3</text>
+  <text class="label" x="745" y="310">4</text>
+  <text class="label" x="380" y="74">3/4 = 0.75</text>
+  <text class="label" x="480" y="52">f(x)</text>
+  <text class="label" x="820" y="285">x</text>
+  <text class="label" x="345" y="340">Tracking weight (g)</text>
+</svg>

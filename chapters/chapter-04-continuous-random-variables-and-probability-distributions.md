@@ -53,6 +53,35 @@ The middle area is $A(0.5)-A(-0.5)=47/128$, so the answer is $1-47/128=81/128=0.
 </details>
 </details>
 
+<details>
+<summary>Exercise 6 — Stereo cartridge tracking weight (§4.1)</summary>
+
+A stereo cartridge is set to track at 3 g. Its actual tracking weight $X$ has pdf $f(x)=k[1-(x-3)^2]$ for $2\le x\le 4$ and $f(x)=0$ otherwise.
+
+- **a.** Sketch the graph of $f(x)$.
+- **b.** Find $k$.
+- **c.** What is the probability that the actual weight is greater than the prescribed 3 g?
+- **d.** What is the probability that the actual weight is within 0.25 g of 3 g?
+- **e.** What is the probability that the actual weight differs from 3 g by more than 0.5 g?
+
+<details>
+<summary>Solution</summary>
+
+**a. Graph.** The density is a downward-opening parabola on $[2,4]$, symmetric about 3, with zeros at 2 and 4. After finding $k$ below, its peak is $f(3)=3/4$; the density is zero elsewhere.
+
+![Density curve for stereo cartridge tracking weight from 2 to 4 g](../assets/ch04-stereo-tracking-weight-density.svg)
+
+**b. Normalize the pdf.** Set $u=x-3$, so the limits 2 and 4 become $-1$ and 1. Then $1=k\int_{-1}^{1}(1-u^2)\,du=k[u-u^3/3]_{-1}^{1}=k(4/3)$, giving **$k=3/4$**.
+
+**c. Greater than 3 g.** Symmetry gives half the area above 3 g. Directly, $P(X>3)=\frac34\int_0^1(1-u^2)\,du=\frac34[u-u^3/3]_0^1=\frac34\cdot\frac23=1/2$.
+
+**d. Within 0.25 g.** This means $2.75\le X\le3.25$, or $-1/4\le u\le1/4$. Thus $P(2.75\le X\le3.25)=\frac34[u-u^3/3]_{-1/4}^{1/4}=\frac34(47/96)=47/128\approx0.36719$.
+
+**e. More than 0.5 g away.** Subtract the middle interval $2.5\le X\le3.5$ from the total area: $P(|X-3|>0.5)=1-\frac34[u-u^3/3]_{-1/2}^{1/2}=1-11/16=5/16=0.3125$. This includes both tails, below 2.5 g and above 3.5 g.
+
+</details>
+</details>
+
 ## 2. CDFs and Expected Values (§4.2)
 
 > **Definition (Cumulative distribution function).** $F(x)=P(X\le x)$, the area under the pdf to the left of $x$.
