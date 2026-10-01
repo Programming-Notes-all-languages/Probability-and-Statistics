@@ -135,6 +135,50 @@ $E(X^2)=\int_1^\infty x^2(3/x^4)\,dx=3[-1/x]_1^\infty=3$, so $V(X)=3-(3/2)^2=3/4
 </details>
 </details>
 
+<details>
+<summary>Problem 10 — Linear density, normalization, and cdf</summary>
+
+The random variable $X$ has pdf $f(x)=cx$ for $0\le x\le2$ and $f(x)=0$ otherwise.
+
+- **a.** Find the constant $c$.
+- **b.** Find the cdf $F(x)$.
+- **c.** Find $P(0\le X\le1)$.
+- **d.** Find $P(-\frac12\le X\le\frac12)$.
+
+<details>
+<summary>Solution</summary>
+
+**a. Normalize the density.** The total area under a pdf must equal 1. Since the density is zero outside $[0,2]$:
+
+$1=\int_0^2 cx\,dx=c[x^2/2]_0^2=c(4/2-0)=2c$.
+
+Therefore **$c=1/2$**, and the density is $f(x)=x/2$ on $[0,2]$.
+
+**b. Build the cdf.** The cdf $F(x)=P(X\le x)$ accumulates all area to the left of the moving cutoff $x$. For $0\le x\le2$, use $t$ as the integration variable:
+
+$F(x)=\int_0^x(t/2)\,dt=[t^2/4]_0^x=x^2/4$.
+
+Include all three cases:
+
+| Range | $F(x)$ | Reason |
+|---|---|---|
+| $x<0$ | $0$ | No probability below the support |
+| $0\le x\le2$ | $x^2/4$ | Area accumulated from 0 to $x$ |
+| $x>2$ | $1$ | All probability has accumulated |
+
+**c. Probability between 0 and 1.** A fixed interval probability is a cdf difference, not a new cdf:
+
+$P(0\le X\le1)=F(1)-F(0)=1^2/4-0=\boxed{1/4}$.
+
+**d. Interval partly outside the support.** Negative values contribute no probability, so $F(-1/2)=0$:
+
+$P(-\frac12\le X\le\frac12)=F(1/2)-F(-1/2)=(1/2)^2/4-0=\boxed{1/16}$.
+
+Do not substitute $x=-1/2$ into $x^2/4$: that cdf formula applies only on $[0,2]$. Including or excluding endpoints does not change these probabilities because $X$ is continuous.
+
+</details>
+</details>
+
 ## 3. The Normal Distribution (§4.3)
 
 > **Definition (Normal distribution).** $X\sim N(\mu,\sigma^2)$ has a symmetric, bell-shaped density with mean and median $\mu$ and standard deviation $\sigma>0$:

@@ -129,6 +129,55 @@ $$
 
 This is the counting pattern behind the hypergeometric distribution.
 
+<details>
+<summary>Problem 12 — Selecting light bulbs without replacement</summary>
+
+A box in a certain supply room contains five 40-W light bulbs, six 60-W bulbs, and four 75-W bulbs. Suppose that three bulbs are randomly selected.
+
+- **a.** What is the probability that exactly two of the selected bulbs are rated 75-W?
+- **b.** What is the probability that all three selected bulbs have the same rating?
+- **c.** What is the probability that one bulb of each type is selected?
+
+<details>
+<summary>Solution</summary>
+
+**Count unordered selections.** The sample is drawn without replacement. Each group of three distinct bulbs is equally likely, and order does not matter, so use combinations rather than permutations.
+
+There are $5+6+4=15$ bulbs. The total number of possible selections is:
+
+$\binom{15}{3}=\frac{15\cdot14\cdot13}{3\cdot2\cdot1}=455$.
+
+For each part, divide the number of selections meeting its condition by 455.
+
+**a. Exactly two 75-W bulbs.** Choose 2 of the 4 available 75-W bulbs and 1 of the $5+6=11$ other bulbs. The third bulb must not be 75-W, or there would be three instead of exactly two.
+
+$\binom{4}{2}=\frac{4\cdot3}{2\cdot1}=6$, and $\binom{11}{1}=11$.
+
+Multiply the choices because both groups are needed:
+
+$P(\text{exactly two 75-W})=\frac{\binom{4}{2}\binom{11}{1}}{\binom{15}{3}}=\frac{6\cdot11}{455}=\boxed{\frac{66}{455}}\approx0.1451$ (**14.51%**).
+
+**b. All three have the same rating.** The three nonoverlapping possibilities are all 40-W, all 60-W, or all 75-W. Count each separately:
+
+- All 40-W: $\binom{5}{3}=\frac{5\cdot4\cdot3}{3\cdot2\cdot1}=10$.
+- All 60-W: $\binom{6}{3}=\frac{6\cdot5\cdot4}{3\cdot2\cdot1}=20$.
+- All 75-W: $\binom{4}{3}=\frac{4\cdot3\cdot2}{3\cdot2\cdot1}=4$.
+
+Add these counts because any one of the three alternatives qualifies:
+
+$P(\text{same rating})=\frac{\binom{5}{3}+\binom{6}{3}+\binom{4}{3}}{\binom{15}{3}}=\frac{10+20+4}{455}=\boxed{\frac{34}{455}}\approx0.0747$ (**7.47%**).
+
+**c. One bulb of each type.** Choose 1 of the 5 available 40-W bulbs, 1 of the 6 available 60-W bulbs, and 1 of the 4 available 75-W bulbs:
+
+$\binom{5}{1}\binom{6}{1}\binom{4}{1}=5\cdot6\cdot4=120$.
+
+$P(\text{one of each type})=\frac{\binom{5}{1}\binom{6}{1}\binom{4}{1}}{\binom{15}{3}}=\frac{120}{455}=\boxed{\frac{24}{91}}\approx0.2637$ (**26.37%**).
+
+**Counting distinction.** Multiply counts when assembling a selection that needs several groups together; add counts for mutually exclusive alternatives. There is no extra ordering factor in (c), because the numerator and denominator both count unordered groups.
+
+</details>
+</details>
+
 ## 4. Conditional Probability
 
 > **Definition (Conditional probability).** For $P(B)>0$, the probability of $A$ after learning that $B$ occurred is
