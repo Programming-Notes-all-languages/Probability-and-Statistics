@@ -13,14 +13,14 @@ Textbook: *Probability and Statistics for Engineering and the Sciences* (8th ed.
 | 2 | Probability: sample spaces, probability rules, permutations and combinations, conditional probability, Bayes' theorem, and independence | [Chapter 2](chapters/chapter-02-probability.md) (§§2.1–2.5) |
 | 3 | Discrete random variables, probability mass functions, expected values, binomial, hypergeometric, negative binomial, and Poisson distributions | [Chapter 3](chapters/chapter-03-discrete-random-variables-and-probability-distributions.md) (§§3.1–3.6) |
 | 4 | Continuous random variables: densities, cdfs, normal, exponential, gamma, Weibull, lognormal, beta distributions, and probability plots | [Chapter 4](chapters/chapter-04-continuous-random-variables-and-probability-distributions.md) (§§4.1–4.6) |
-| 5 | Point estimation: method of moments, maximum likelihood, bias, MSE, sufficiency | — |
-| 6 | Interval estimation: confidence intervals for means, proportions, variances (large and small samples) | — |
-| 7 | Hypothesis testing: Type I/II errors, p-values, power, z-tests, t-tests, chi-square tests | — |
-| 8 | Analysis of variance: one-way ANOVA, two-way ANOVA, randomized block designs | — |
-| 9 | Simple linear regression: least squares, inference on slope and intercept, prediction intervals, R² | — |
-| 10 | Multiple regression and model building: model selection, residual analysis, transformations | — |
-| 11 | Nonparametric methods: sign test, Wilcoxon tests, Kruskal-Wallis | — |
-| 12 | Statistical quality control: X-bar, R, p, c control charts; process capability | — |
+| 5 | Joint probability distributions and random samples: covariance, correlation, sampling distributions, sample means, and linear combinations | — |
+| 6 | Point estimation: general concepts and methods of estimation | — |
+| 7 | Statistical intervals based on a single sample: confidence intervals and bounds, score intervals for proportions, prediction and tolerance intervals, variance and standard deviation | [Chapter 7](chapters/chapter-07-statistical-intervals-based-on-a-single-sample.md) (§§7.1–7.4) |
+| 8 | Tests of hypotheses based on a single sample: tests for means and proportions, p-values, and test selection | — |
+| 9 | Inferences based on two samples: differences in means and proportions, two-sample t procedures, paired data, and variance comparisons | — |
+| 10 | Analysis of variance: single-factor ANOVA and multiple comparisons | — |
+| 11 | Multifactor analysis of variance: two-factor and three-factor ANOVA, factorial experiments | — |
+| 12 | Simple linear regression and correlation: model fitting, inference, prediction, and correlation | — |
 
 ## Conventions
 

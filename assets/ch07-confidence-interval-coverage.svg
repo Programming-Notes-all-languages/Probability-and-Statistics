@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Confidence intervals from repeated samples</title>
+  <desc id="desc">Eight illustrative intervals have different sample means and endpoints. A dashed vertical line marks the same fixed population mean. Seven intervals cross it and one misses. This small illustration does not specify a confidence level or guarantee an exact capture count.</desc>
+  <style>
+    .bg { fill: #ffffff; }
+    text { font-family: system-ui, sans-serif; fill: #172033; }
+    .muted { fill: #536174; }
+    .capture { stroke: #167b91; fill: #167b91; }
+    .miss { stroke: #be3449; fill: #be3449; }
+    .reference { stroke: #637188; stroke-width: 2; stroke-dasharray: 6 5; }
+    .interval { stroke-width: 4; fill: none; }
+    .endpoint { stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #101827; }
+      text { fill: #edf2fa; }
+      .muted { fill: #b3c0d1; }
+      .capture { stroke: #65c8db; fill: #65c8db; }
+      .miss { stroke: #ff8a9d; fill: #ff8a9d; }
+      .reference { stroke: #bcc8da; }
+    }
+  </style>
+  <rect class="bg" width="900" height="430" rx="12"/>
+  <text x="30" y="40" font-size="24" font-weight="650">Different samples, same population mean</text>
+  <text class="muted" x="30" y="69" font-size="15">The intervals move; the unknown parameter stays fixed.</text>
+  <text class="muted" x="30" y="107" font-size="14">Random sample</text>
+  <text class="muted" x="720" y="107" font-size="14">Contains the mean?</text>
+  <line class="reference" x1="500" y1="104" x2="500" y2="367"/>
+  <g font-size="15">
+    <text x="55" y="144">1</text>
+    <line class="capture interval" x1="415" y1="139" x2="555" y2="139"/>
+    <path class="capture endpoint" fill="none" d="M415 131v16 M555 131v16"/>
+    <circle class="capture" cx="485" cy="139" r="4"/>
+    <text x="750" y="144">Yes</text>
+    <text x="55" y="174">2</text>
+    <line class="capture interval" x1="460" y1="169" x2="600" y2="169"/>
+    <path class="capture endpoint" fill="none" d="M460 161v16 M600 161v16"/>
+    <circle class="capture" cx="530" cy="169" r="4"/>
+    <text x="750" y="174">Yes</text>
+    <text x="55" y="204">3</text>
+    <line class="capture interval" x1="405" y1="199" x2="545" y2="199"/>
+    <path class="capture endpoint" fill="none" d="M405 191v16 M545 191v16"/>
+    <circle class="capture" cx="475" cy="199" r="4"/>
+    <text x="750" y="204">Yes</text>
+    <text x="55" y="234">4</text>
+    <line class="capture interval" x1="470" y1="229" x2="610" y2="229"/>
+    <path class="capture endpoint" fill="none" d="M470 221v16 M610 221v16"/>
+    <circle class="capture" cx="540" cy="229" r="4"/>
+    <text x="750" y="234">Yes</text>
+    <text x="55" y="264">5</text>
+    <line class="capture interval" x1="390" y1="259" x2="530" y2="259"/>
+    <path class="capture endpoint" fill="none" d="M390 251v16 M530 251v16"/>
+    <circle class="capture" cx="460" cy="259" r="4"/>
+    <text x="750" y="264">Yes</text>
+    <text x="55" y="294">6</text>
+    <line class="miss interval" x1="540" y1="289" x2="680" y2="289"/>
+    <path class="miss endpoint" fill="none" d="M540 281v16 M680 281v16"/>
+    <circle class="miss" cx="610" cy="289" r="4"/>
+    <text x="750" y="294">No</text>
+    <text x="55" y="324">7</text>
+    <line class="capture interval" x1="432" y1="319" x2="572" y2="319"/>
+    <path class="capture endpoint" fill="none" d="M432 311v16 M572 311v16"/>
+    <circle class="capture" cx="502" cy="319" r="4"/>
+    <text x="750" y="324">Yes</text>
+    <text x="55" y="354">8</text>
+    <line class="capture interval" x1="415" y1="349" x2="555" y2="349"/>
+    <path class="capture endpoint" fill="none" d="M415 341v16 M555 341v16"/>
+    <circle class="capture" cx="485" cy="349" r="4"/>
+    <text x="750" y="354">Yes</text>
+  </g>
+  <text x="500" y="389" text-anchor="middle" font-size="14" font-weight="600">Fixed population mean</text>
+  <text class="muted" x="30" y="415" font-size="13">Illustration only: a small batch need not match the long-run confidence percentage exactly.</text>
+</svg>
